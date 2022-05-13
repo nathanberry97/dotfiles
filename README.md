@@ -14,3 +14,6 @@ plugins:
 - AutoComplPop
 - nerdtree
 - ale
+- vim-airline
+- fzf 
+- fzf.vim
