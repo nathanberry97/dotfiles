@@ -1,18 +1,22 @@
 # dotfiles
 
-### vimrc
+This repo is intended to store my dotfiles such as vimrc, and alias I use with
+in my dev environments.
 
-Current version of my vimrc and plugins I use.
+## vimrc preview
 
-Uploading to github to be able to distribute easily between my machines.
+![image](images/vim.png)
 
-Plug in manager: 
+## vimrc overview
+
+Current version of my vimrc and plugins I use,
+uploading to github to be able to distribute easily between my machines.
+
+#### Plug in manager: 
 
 - [GitHub vim-plug](https://github.com/junegunn/vim-plug)
 
-#### plugins:
-
-<center>
+## plugins:
 
 | plugins       | link                                                  |
 |:-------------:|:-----------------------------------------------------:|
@@ -25,6 +29,3 @@ Plug in manager:
 | vim-airline   | [GitHub](https://github.com/vim-airline/vim-airline)  |
 | AutoComplPop  | [GitHub](https://github.com/vim-scripts/AutoComplPop) |
 
-</center>
-
-![image](images/vim.png)
