@@ -1,7 +1,7 @@
 # dotfiles
 
-This repo is intended to store my dotfiles such as vimrc, and alias I use with
-in my dev environments.
+This repo is intended to store my dotfiles such as vimrc, 
+and alias I use within my dev environments.
 
 ## vimrc preview
 
