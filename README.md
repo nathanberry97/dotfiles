@@ -41,7 +41,7 @@ I use the following alongside zsh in my environment:
 | zsh             | link                                                  |
 |:---------------:|:-----------------------------------------------------:|
 | oh-my-zsh       | [website](https://ohmyz.sh/)                          |
-| starship prompt | [website](https://github.com/junegunn/fzf)            |
+| starship prompt | [website](https://starship.rs/)                       |
 
 ## aliases overview
 
