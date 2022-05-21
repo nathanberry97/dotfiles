@@ -29,3 +29,22 @@ uploading to github to be able to distribute easily between my machines.
 | vim-airline   | [GitHub](https://github.com/vim-airline/vim-airline)  |
 | AutoComplPop  | [GitHub](https://github.com/vim-scripts/AutoComplPop) |
 
+## terminal preview
+
+![image](images/terminal.png)
+
+## terminal overview
+
+This is the current state of my terminal I use the z-shell(zsh),
+I use the following alongside zsh in my environment:
+
+| zsh             | link                                                  |
+|:---------------:|:-----------------------------------------------------:|
+| oh-my-zsh       | [website](https://ohmyz.sh/)                          |
+| starship prompt | [website](https://github.com/junegunn/fzf)            |
+
+## aliases overview
+
+Within my zshrc file there are some aliases, the frist couple are paths to some
+of my folders. But the rest are aliases I use to make my git workflow easier
+and useful commands such as history | grep. 
