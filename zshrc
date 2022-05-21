@@ -29,6 +29,7 @@ alias checkout="git checkout"
 alias add="git add -A"
 alias commit="git commit -m"
 alias push="git push"
+alias pull="git pull"
 
 # command prompt theme
 eval "$(starship init zsh)"
