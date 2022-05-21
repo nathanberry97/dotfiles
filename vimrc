@@ -20,7 +20,7 @@ set path+=**
 
 set scrolloff=8
 set signcolumn=yes
-set colorcolumn=79
+set colorcolumn=80
 hi ColorColumn ctermbg=0 guibg=lightgrey
 
 " tab settings
