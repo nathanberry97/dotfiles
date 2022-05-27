@@ -8,6 +8,7 @@ set incsearch
 set hlsearch
 
 set splitright
+set splitbelow
 
 set completeopt=menuone,longest
 set shortmess+=c
@@ -42,6 +43,7 @@ Plug 'morhetz/gruvbox'           " theme
 Plug 'preservim/nerdtree'        " file view
 Plug 'vim-airline/vim-airline'   " status bar
 Plug 'vim-scripts/AutoComplPop'  " automatically shows completion menu
+Plug 'arcticicestudio/nord-vim'  " theme
 
 call plug#end()
 
@@ -50,10 +52,10 @@ colorscheme gruvbox
 set bg=dark
 hi Normal guibg=NONE ctermbg=NONE
 
-" key mapping for nerdtree, fuzzy finder, and terminal
-" the last setting is for wsl visual mode
+" key mapping for nerdtree, fuzzy finder, visual block, and terminal
 let mapleader = " "
 nnoremap <leader>f :Files .<CR>
 nnoremap <leader>n :NERDTree<CR>
 nnoremap <leader>t :vert term<CR>
+nnoremap <leader>s :term<CR>
 nnoremap <Leader>v <c-v>
