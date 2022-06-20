@@ -1,36 +1,28 @@
-# places prompt information on the right 
-format       = """$character"""
-right_format = """$all"""
+format = """
+[](#86BBD8)\
+$directory\
+[](fg:#86BBD8 bg:#06969A)\
+$git_branch\
+[](fg:#06969A bg:#33658A)\
+$git_status\
+[ ](fg:#33658A)\
+"""
 
-# allows the prompt to be one line
-[line_break]
-disabled = true
+[directory]
+style             = "bg:#86BBD8"
+format            = "[ $path ]($style)"
+truncation_length = 1
 
-# shows current profile
-[username]
-show_always = true
-format      = "[$user]($style): "
+[git_branch]
+symbol = ""
+style  = "bg:#06969A"
+format = '[[ $symbol $branch ](bg:#06969A)]($style)'
 
-# git status to show the count of files
 [git_status]
+style     = "bg:#33658A"
+format    = '[[( $all_status$ahead_behind )](bg:#33658A)]($style)'
+deleted   = "-($count)"
 modified  = "!($count)"
 untracked = "?($count)"
 staged    = "+($count)"
-style     = "bold bright-blue"
 
-# shows current time uncomment to show time
-# [time]
-# disabled = false
-# use_12hr = true
-# format   = "[$time]($style)"
-# style    = "bold bright-black"
-
-# unwanted information
-[cmd_duration]
-disabled = true
-[aws]
-disabled = true
-[python]
-disabled = true
-[java]
-disabled = true

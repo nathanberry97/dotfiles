@@ -48,9 +48,10 @@ Plug 'arcticicestudio/nord-vim'  " theme
 call plug#end()
 
 " colour scheme 
-colorscheme gruvbox
-set bg=dark
-hi Normal guibg=NONE ctermbg=NONE
+" colorscheme gruvbox
+" set bg=dark
+" hi Normal guibg=NONE ctermbg=NONE
+colorscheme nord
 
 " key mapping for nerdtree, fuzzy finder, visual block, and terminal
 let mapleader = " "
