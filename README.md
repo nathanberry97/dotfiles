@@ -36,16 +36,12 @@ uploading to github to be able to distribute easily between my machines.
 ## terminal overview
 
 This is the current state of my terminal I use the z-shell(zsh),
-I use the following alongside zsh in my environment:
+also I use the following alongside zsh in my environment:
 
 | zsh             | link                                                  |
 |:---------------:|:-----------------------------------------------------:|
 | oh-my-zsh       | [website](https://ohmyz.sh/)                          |
-| powerlevel10k   | [website](https://github.com/romkatv/powerlevel10k)   |
 | starship prompt | [website](https://starship.rs/)                       |
-
-You can decide using either starship prompt or powerlevel10k, but I find that
-powerlevel10k is the quicker prompt in terms of performance.
 
 ## aliases overview
 
