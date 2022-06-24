@@ -3,9 +3,17 @@
 This repo is intended to store my dotfiles such as vimrc, 
 and aliases I use within my dev environments.
 
-## vimrc preview
+## gruvbox preview
 
-![image](images/vim.png)
+![image](images/gruvTerm.png)
+
+![image](images/gruvVim.png)
+
+## nord preview
+
+![image](images/nordTerm.png)
+
+![image](images/nordVim.png)
 
 ## vimrc overview
 
@@ -28,10 +36,6 @@ uploading to github to be able to distribute easily between my machines.
 | nerdtree      | [GitHub](https://github.com/preservim/nerdtree)       |
 | vim-airline   | [GitHub](https://github.com/vim-airline/vim-airline)  |
 | AutoComplPop  | [GitHub](https://github.com/vim-scripts/AutoComplPop) |
-
-## terminal preview
-
-![image](images/terminal.png)
 
 ## terminal overview
 

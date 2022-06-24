@@ -1,0 +1,41 @@
+format = """
+[](#88C0D0)\
+$directory\
+$git_branch\
+[ ](fg:#88C0D0)\
+"""
+
+right_format = """
+[](#A3BE8C)
+$git_status\
+$time\
+[](#A3BE8C)
+"""
+
+[directory]
+style             = "bg:#88C0D0"
+format            = "[ $path ]($style)"
+truncation_length = 1
+
+[git_branch]
+symbol = ""
+style  = "bg:#88C0D0"
+format = '[[$symbol on $branch ](bg:#88C0D0)]($style)'
+
+[git_status]
+style     = "bg:#A3BE8C"
+format    = '([\[$modified$untracked$staged(bg:#A3BE8C)\] ]($style))'
+modified  = "!($count)"
+untracked = "?($count)"
+staged    = "+($count)"
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#A3BE8C"
+format = '[[$time](bg:#A3BE8C)]($style)'
+
+# | gruvbox | nord   |
+# |---------|--------|
+# | 458588  | 88C0D0 |
+# | 8EC07C  | A3BE8C |
