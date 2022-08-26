@@ -34,8 +34,3 @@ disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#A3BE8C"
 format = '[[$time](bg:#A3BE8C)]($style)'
-
-# | gruvbox | nord   |
-# |---------|--------|
-# | 458588  | 88C0D0 |
-# | 8EC07C  | A3BE8C |

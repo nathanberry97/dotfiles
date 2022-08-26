@@ -24,6 +24,8 @@ set signcolumn=yes
 set colorcolumn=80
 hi ColorColumn ctermbg=0 guibg=lightgrey
 
+set clipboard=unnamed,unnamedplus
+
 " tab settings
 set autoindent
 set smartindent
@@ -36,27 +38,40 @@ set shiftwidth=4
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'    " git diff in doc
+Plug 'arcticicestudio/nord-vim'  " theme
 Plug 'dense-analysis/ale'        " linter 
 Plug 'junegunn/fzf'              " fuzzy finder
 Plug 'junegunn/fzf.vim'          " fuzzy finder added functionally 
 Plug 'morhetz/gruvbox'           " theme
+Plug 'neoclide/coc.nvim'         " autocomplete 
+Plug 'speshak/vim-cfn'           " cloudformation linter 
 Plug 'preservim/nerdtree'        " file view
 Plug 'vim-airline/vim-airline'   " status bar
-Plug 'vim-scripts/AutoComplPop'  " automatically shows completion menu
-Plug 'arcticicestudio/nord-vim'  " theme
 
 call plug#end()
-
-" colour scheme 
-" colorscheme gruvbox
-" set bg=dark
-" hi Normal guibg=NONE ctermbg=NONE
-colorscheme nord
 
 " key mapping for nerdtree, fuzzy finder, visual block, and terminal
 let mapleader = " "
 nnoremap <leader>f :Files .<CR>
-nnoremap <leader>n :NERDTree<CR>
+nnoremap <leader>n :e .<CR>
+nnoremap <leader>b :NERDTree .<CR>
 nnoremap <leader>t :vert term<CR>
 nnoremap <leader>s :term<CR>
 nnoremap <Leader>v <c-v>
+
+" colour scheme 
+
+" makes comments readable using nord for windows
+" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" if (has("termguicolors"))
+"     set termguicolors
+" endif
+
+" colorscheme nord
+
+colorscheme gruvbox
+set bg=dark
+hi Normal guibg=NONE ctermbg=NONE
+

@@ -26,16 +26,19 @@ uploading to github to be able to distribute easily between my machines.
 
 ## plugins:
 
-| plugins       | link                                                  |
-|:-------------:|:-----------------------------------------------------:|
-| vim-gitgutter | [GitHub](https://github.com/airblade/vim-gitgutter)   |
-| ale           | [GitHub](https://github.com/dense-analysis/ale)       |
-| fzf           | [GitHub](https://github.com/junegunn/fzf)             |
-| fzf.vim       | [GitHub](https://github.com/junegunn/fzf.vim)         |
-| gruvbox       | [GitHub](https://github.com/morhetz/gruvbox)          |
-| nerdtree      | [GitHub](https://github.com/preservim/nerdtree)       |
-| vim-airline   | [GitHub](https://github.com/vim-airline/vim-airline)  |
-| AutoComplPop  | [GitHub](https://github.com/vim-scripts/AutoComplPop) |
+| plugins       | link                                                      |
+|:-------------:|:---------------------------------------------------------:|
+| vim-gitgutter | [GitHub](https://github.com/airblade/vim-gitgutter)       |
+| ale           | [GitHub](https://github.com/dense-analysis/ale)           |
+| fzf           | [GitHub](https://github.com/junegunn/fzf)                 |
+| fzf.vim       | [GitHub](https://github.com/junegunn/fzf.vim)             |
+| gruvbox       | [GitHub](https://github.com/morhetz/gruvbox)              |
+| nord          | [GitHub](https://github.com/arcticicestudio/nord-vim)     |
+| nerdtree      | [GitHub](https://github.com/preservim/nerdtree)           |
+| vim-airline   | [GitHub](https://github.com/vim-airline/vim-airline)      |
+| coc           | [GitHub](https://github.com/neoclide/coc.nvim)            |
+| cfn           | [GitHub](https://github.com/speshak/vim-cfn)              |
+| AutoComplPop  | [GitHub old](https://github.com/vim-scripts/AutoComplPop) |
 
 ## terminal overview
 

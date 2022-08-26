@@ -1,0 +1,31 @@
+format = """
+$directory\
+$git_branch\
+$git_status\
+$character
+"""
+right_format = """
+"""
+
+[directory]
+style             = "blue bold"
+format            = "[$path ]($style)"
+truncation_length = 1
+
+[git_branch]
+symbol = ""
+style  = "bright-black bold"
+format = '[$symbol $branch ]($style)'
+
+[git_status]
+style     = "bright-black bold"
+format    = '([\[$modified$untracked$staged\] ]($style))'
+modified  = "!($count)"
+untracked = "?($count)"
+staged    = "+($count)"
+
+[character]
+success_symbol = "[❯](purple bold)"
+error_symbol   = "[❯](red)"
+vicmd_symbol   = "[❮](green)"
+
