@@ -50,14 +50,14 @@ Plug 'vim-airline/vim-airline'   " status bar
 
 call plug#end()
 
-" key mapping for nerdtree, fuzzy finder, visual block, and terminal
+" key mapping for nerdtree, fuzzy finder, and terminal
 let mapleader = " "
 nnoremap <leader>f :Files .<CR>
 nnoremap <leader>n :e .<CR>
 nnoremap <leader>b :NERDTree .<CR>
-nnoremap <leader>t :vert term<CR>
+nnoremap <leader>v :vert term<CR>
 nnoremap <leader>s :term<CR>
-nnoremap <Leader>v <c-v>
+nnoremap <leader>t :tab:term<CR>
 
 " colour scheme 
 
