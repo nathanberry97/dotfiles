@@ -25,6 +25,7 @@ set colorcolumn=80
 hi ColorColumn ctermbg=0 guibg=lightgrey
 
 set clipboard=unnamed,unnamedplus
+autocmd FileType markdown,text setlocal spell
 
 " tab settings
 set autoindent
