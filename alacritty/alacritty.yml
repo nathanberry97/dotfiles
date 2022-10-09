@@ -1,18 +1,20 @@
 window:
   decorations: none
-  opacity: 0.8
+  opacity: 0.65
   padding:
     x: 20
     y: 0
 
 font:
   size: 18.0
+  normal:
+    family: SFMono Nerd Font
 
-# (Gruvbox Material Dark Medium)
-colors:
-  primary:
-    background: '0x282828'
-    foreground: '0xdfbf8e'
+schemes:
+  gruvbox: &gruvbox
+    primary:
+      background: '0x282828'
+      foreground: '0xdfbf8e'
 
     normal:
       black:   '0x665c54'
@@ -33,3 +35,5 @@ colors:
       magenta: '0xd3869b'
       cyan:    '0x89b482'
       white:   '0xdfbf8e'
+
+colors: *gruvbox

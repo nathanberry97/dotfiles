@@ -1,3 +1,4 @@
+
 format = """
 $directory\
 $git_branch\
@@ -28,4 +29,3 @@ staged    = "+($count)"
 success_symbol = "[❯](purple bold)"
 error_symbol   = "[❯](red)"
 vicmd_symbol   = "[❮](green)"
-

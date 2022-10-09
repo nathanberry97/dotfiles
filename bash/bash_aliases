@@ -1,0 +1,19 @@
+# aliases
+alias vim="nvim"
+alias py="python3"
+alias gh="history | grep"
+alias ls="ls -l"
+alias ..="cd .."
+
+alias gb="git checkout -b"
+alias gc="git checkout"
+alias ga="git add -A"
+alias gc="git commit -m"
+alias gp="git push"
+alias gl="git log"
+alias gs="git status"
+alias gd="git diff"
+
+# command prompt
+eval "$(starship init bash)"
+
