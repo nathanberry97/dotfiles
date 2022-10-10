@@ -10,10 +10,10 @@ return require('packer').startup(function(use)
     use 'morhetz/gruvbox'
     use 'neoclide/coc.nvim'      
     use 'preservim/nerdtree'
+    use 'mkitt/tabline.vim'
     use {
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
 end)
-
