@@ -1,31 +1,27 @@
-
 format = """
 $directory\
 $git_branch\
 $git_status\
 $character
 """
-right_format = """
-"""
 
 [directory]
-style             = "blue bold"
-format            = "[$path ]($style)"
-truncation_length = 1
+style  = "bright-blue bold"
+format = "[$path ]($style)"
 
 [git_branch]
 symbol = ""
-style  = "bright-black bold"
+style  = "bright-black"
 format = '[$symbol $branch ]($style)'
 
 [git_status]
-style     = "bright-black bold"
-format    = '([\[$modified$untracked$staged\] ]($style))'
+style     = "bright-black"
+format    = '([\[$modified$untracked$staged\] ](218)($style))'
 modified  = "!($count)"
 untracked = "?($count)"
 staged    = "+($count)"
 
 [character]
-success_symbol = "[❯](purple bold)"
+success_symbol = "[❯](purple)"
 error_symbol   = "[❯](red)"
 vicmd_symbol   = "[❮](green)"
