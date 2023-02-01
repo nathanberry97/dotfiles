@@ -6,8 +6,9 @@ $character
 """
 
 [directory]
-style  = "bright-blue bold"
-format = "[$path ]($style)"
+style             = "bright-blue bold"
+truncation_length = 1
+format            = '[$path ]($style)'
 
 [git_branch]
 symbol = ""
@@ -15,13 +16,12 @@ style  = "bright-black"
 format = '[$symbol $branch ]($style)'
 
 [git_status]
-style     = "bright-black"
-format    = '([\[$modified$untracked$staged\] ](218)($style))'
+style     = "white"
+format    = '([\[$modified$untracked$staged\] ]($style))'
 modified  = "!($count)"
 untracked = "?($count)"
 staged    = "+($count)"
 
 [character]
-success_symbol = "[❯](purple)"
-error_symbol   = "[❯](red)"
-vicmd_symbol   = "[❮](green)"
+success_symbol = "[❯](bright-black)"
+error_symbol   = "[❯](bright-black)"
