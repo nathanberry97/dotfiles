@@ -12,7 +12,7 @@ format            = '[$path ]($style)'
 
 [git_branch]
 symbol = ""
-style  = "bright-black"
+style  = "black"
 format = '[$symbol $branch ]($style)'
 
 [git_status]
