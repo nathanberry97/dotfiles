@@ -1,9 +1,14 @@
 format = """
+$hostname\
 $directory\
 $git_branch\
 $git_status\
 $character
 """
+
+[hostname]
+ssh_only = true
+format = '[\[$hostname\]](bold bright-purple) '
 
 [directory]
 style             = "bright-blue bold"
