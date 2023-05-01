@@ -1,4 +1,5 @@
 require('settings')
 require('keymappings')
-require('theme')
 require('plugins')
+require('lsp')
+require('theme')
