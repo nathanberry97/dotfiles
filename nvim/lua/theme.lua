@@ -5,7 +5,6 @@ vim.cmd('colorscheme gruvbox')
 
 -- setup lualine
 require('lualine').setup()
-options = { theme = 'lualine.themes.gruvbox' }
 
 -- show tabline
-vim.o.showtabline=2
+vim.o.showtabline = 2
