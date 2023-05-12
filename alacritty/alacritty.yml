@@ -65,4 +65,4 @@ schemes:
       cyan: "#8fbcbb"
       white: "#eceff4"
 
-colors: *nord
+colors: *gruvbox
