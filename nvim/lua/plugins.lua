@@ -17,7 +17,6 @@ return require('packer').startup(function(use)
 
     -- The following plugins are for my theme
     use 'morhetz/gruvbox'
-    use 'nordtheme/vim'
     use 'mkitt/tabline.vim'
     use {
         'nvim-lualine/lualine.nvim',
