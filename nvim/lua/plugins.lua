@@ -12,16 +12,9 @@ return require('packer').startup(function(use)
     use 'junegunn/fzf'
     use 'junegunn/fzf.vim'
 
-    -- The following plugin is for terraform Syntax highlighting 
-    use 'hashivim/vim-terraform'
-
     -- The following plugins are for my theme
     use 'morhetz/gruvbox'
     use 'mkitt/tabline.vim'
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
 
     -- The following plugin is for my lsp
     use {
@@ -29,5 +22,8 @@ return require('packer').startup(function(use)
         branch = 'master',
         run = 'yarn install --frozen-lockfile'
     }
+
+    -- The following plugin is for terraform Syntax highlighting 
+    use 'hashivim/vim-terraform'
 
 end)
