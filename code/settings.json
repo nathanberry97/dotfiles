@@ -7,7 +7,7 @@
     "editor.scrollbar.vertical": "hidden",
     "editor.lineNumbers": "relative",
     "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 3,
     "workbench.sideBar.location": "right",
     "workbench.colorTheme": "Gruvbox Dark Medium",
     "workbench.activityBar.visible": false,
@@ -16,9 +16,9 @@
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.perEditorGroup": true,
     "workbench.editor.limit.value": 1,
+    "editor.rulers": [80],
     "vim.handleKeys": {
         "<C-b>": false,
-        "<C-j>": false,
         "<C-d>": true,
         "<C-s>": false,
         "<C-z>": false
