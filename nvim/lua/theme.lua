@@ -5,4 +5,4 @@ vim.cmd('colorscheme gruvbox')
 vim.o.laststatus = 0
 
 -- show tabline
-vim.o.showtabline = 2
+-- vim.o.showtabline = 2
