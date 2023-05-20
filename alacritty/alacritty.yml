@@ -6,6 +6,9 @@ window:
     y: 10
   startup_mode: Maximized
 
+key_bindings:
+  - { key: F11, action: ToggleFullscreen }
+
 font:
   size: 23.0
   normal:
