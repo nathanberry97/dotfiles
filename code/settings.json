@@ -7,7 +7,7 @@
     "editor.scrollbar.vertical": "hidden",
     "editor.lineNumbers": "relative",
     "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": 3,
+    "window.zoomLevel": 4,
     "workbench.sideBar.location": "right",
     "workbench.colorTheme": "Gruvbox Dark Medium",
     "workbench.activityBar.visible": false,

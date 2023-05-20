@@ -21,8 +21,9 @@ vim.opt.signcolumn = 'yes'
 vim.opt.errorbells = false
 vim.opt.shortmess:append('c')
 
-vim.api.nvim_set_option('clipboard','unnamed')
-vim.api.nvim_set_option('clipboard','unnamedplus')
+-- Need to comment out the following as currently resulting in a bug
+-- vim.api.nvim_set_option('clipboard','unnamed')
+-- vim.api.nvim_set_option('clipboard','unnamedplus')
 
 -- tab settings
 vim.opt.expandtab = true
