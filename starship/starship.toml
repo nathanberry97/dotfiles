@@ -3,15 +3,16 @@ $hostname\
 $directory\
 $git_branch\
 $git_status\
+$line_break\
 $character
 """
 
 [hostname]
-ssh_only = true
-format = '[\[$hostname\]](bold bright-purple) '
+ssh_only = false
+format   = '[$hostname](bright-purple) '
 
 [directory]
-style             = "bright-blue bold"
+style             = "bright-blue"
 truncation_length = 1
 format            = '[$path ]($style)'
 
@@ -21,8 +22,8 @@ style  = "black"
 format = '[$symbol $branch ]($style)'
 
 [git_status]
-style     = "white"
-format    = '([\[$modified$untracked$staged\] ]($style))'
+style     = "black"
+format    = '([\[$modified$untracked$staged\]]($style))'
 modified  = "!($count)"
 untracked = "?($count)"
 staged    = "+($count)"
