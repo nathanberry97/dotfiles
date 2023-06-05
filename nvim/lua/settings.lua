@@ -7,7 +7,9 @@ vim.opt.relativenumber = true
 
 vim.o.splitright = true
 vim.o.splitbelow = true
+
 vim.g.netrw_banner = 0
+vim.g.vimwiki_global_ext = 0
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true

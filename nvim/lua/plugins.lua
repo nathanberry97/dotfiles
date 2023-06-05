@@ -8,6 +8,9 @@ return require('packer').startup(function(use)
     use 'airblade/vim-gitgutter'
     use 'dense-analysis/ale'
 
+    -- The following plugin is for note taking
+    use 'vimwiki/vimwiki'
+
     -- The following plugins are for fuzz finding
     use 'junegunn/fzf'
     use 'junegunn/fzf.vim'
