@@ -1,4 +1,5 @@
 format = """
+$username\
 $hostname\
 $directory\
 $git_branch\
@@ -7,27 +8,34 @@ $line_break\
 $character
 """
 
+[username]
+style_user  = "bright-yellow"
+format      = '[$user]($style)[@](bright-black)'
+disabled    = false
+show_always = true
+
 [hostname]
 ssh_only = false
-format   = '[$hostname](bright-purple) '
+format   = '[$hostname](bright-blue)[:](bright-black)'
 
 [directory]
-style             = "bright-blue"
+style             = "bright-purple"
 truncation_length = 1
-format            = '[$path ]($style)'
+format            = '[$path]($style)'
 
 [git_branch]
-symbol = ""
-style  = "black"
-format = '[$symbol $branch ]($style)'
+style  = "red"
+format = '[\(](bright-black)[$branch]($style)[\)](bright-black)'
 
 [git_status]
-style     = "black"
-format    = '([\[$modified$untracked$staged\]]($style))'
-modified  = "!($count)"
-untracked = "?($count)"
-staged    = "+($count)"
+style     = "bright-black"
+modified  = " "
+untracked = " "
+staged    = " "
+deleted   = " "
+renamed   = " "
+format    = '([*$renamed$modified$untracked$staged$deleted]($style))'
 
 [character]
-success_symbol = "[❯](bright-black)"
-error_symbol   = "[❯](bright-black)"
+success_symbol = "[>](bright-black)"
+error_symbol   = "[>](bright-black)"
