@@ -10,7 +10,7 @@ key_bindings:
   - { key: F11, action: ToggleFullscreen }
 
 font:
-  size: 23.0
+  size: 25.0
   normal:
     family: SFMono Nerd Font
 
