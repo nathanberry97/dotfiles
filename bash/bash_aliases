@@ -16,6 +16,9 @@ alias gl="git log"
 alias gs="git status"
 alias gd="git diff"
 
+alias notes="cd /home/nathan/vimwiki/"
+alias repos="cd /home/nathan/Documents/repos/"
+
 # command prompt
 eval "$(starship init bash)"
 
