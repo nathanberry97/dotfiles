@@ -4,3 +4,4 @@ vim.cmd('colorscheme gruvbox')
 
 -- hide status bar
 vim.o.laststatus = 0
+vim.o.showtabline = 2
