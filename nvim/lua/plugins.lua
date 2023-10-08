@@ -26,6 +26,9 @@ return require('packer').startup(function(use)
         run = 'yarn install --frozen-lockfile'
     }
 
+    -- The following plugin allows smart pane switching with tmux
+    use 'christoomey/vim-tmux-navigator'
+
     -- The following plugin is for terraform Syntax highlighting 
     use 'hashivim/vim-terraform'
 
