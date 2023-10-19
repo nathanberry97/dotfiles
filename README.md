@@ -14,6 +14,18 @@ and neovim.
 
 > **note** I currently use neovim and the vim setup won't be maintained
 
+### Software to install allow code searching feature within neovim
+
+[Install ag to allow code searching within neovim with fzf.vim package](https://github.com/ggreer/the_silver_searcher)
+
+```shell
+dnf install the_silver_searcher
+apt-get install silversearcher-ag
+```
+
+> To see the key mapping I have set for this please look into the
+> `./nvim/lua/keymappings.lua` file
+
 ### Commands for neovim coc-settings lsp
 
 This section is an overview how to download the LSPs for the following:

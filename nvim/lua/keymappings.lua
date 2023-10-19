@@ -1,6 +1,7 @@
 -- leader and keymappings
 vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>f', ':Files .<CR>')
+vim.keymap.set('n', '<leader>g', ':Ag .<CR>')
 vim.keymap.set('n', '<leader>n', ':Ex<CR>')
 vim.keymap.set('n', '<leader>d', ':call CocActionAsync("jumpDefinition") <CR>')
 vim.keymap.set('n', '<leader>s', function()
