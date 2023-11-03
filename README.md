@@ -1,18 +1,16 @@
 # dotfiles
 
-This repo is intended to store my configurations for things such as tmux
-and neovim.
+> This repo is intended to store my configurations for things such as tmux and neovim.
 
 ## preview
 
-![image](images/setup.png)
+![image](.images/neovim.png)
 
-## Plugin manager for vim and neovim
+![image](.images/terminal.png)
+
+## Plugin manager for neovim
 
 - [neovim plugin manager](https://github.com/wbthomason/packer.nvim)
-- [vim plugin manager](https://github.com/junegunn/vim-plug)
-
-> **note** I currently use neovim and the vim setup won't be maintained
 
 ### Software to install allow code searching feature within neovim
 
@@ -44,4 +42,41 @@ For the docker language server you need to run the following command:
 
 ```shell
 sudo npm install -g dockerfile-language-server-nodejs
+```
+
+## Starship prompt
+
+Please ensure to add the following into your rc file once you install
+[starship](https://starship.rs/guide/#%F0%9F%9A%80-installation):
+
+```shell
+# command prompt
+eval "$(starship init bash)"
+```
+
+## Bash aliases
+
+Here are some useful bash aliases I use:
+
+```shell
+# aliases
+alias vim="nvim"
+alias py="python3"
+alias gh="history | grep"
+alias ls="ls -l"
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias gb="git checkout -b"
+alias gc="git checkout"
+alias ga="git add -A"
+alias gc="git commit -m"
+alias gp="git push"
+alias gpl="git pull"
+alias gl="git log"
+alias gs="git status"
+alias gd="git diff"
+
+alias notes="cd /home/nathan/vimwiki/"
+alias repos="cd /home/nathan/Documents/repos/"
 ```
