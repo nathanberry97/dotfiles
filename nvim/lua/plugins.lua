@@ -17,6 +17,7 @@ return require('packer').startup(function(use)
 
     -- The following plugins are for my theme
     use 'morhetz/gruvbox'
+    use 'mkitt/tabline.vim'
 
     -- The following plugin is for my lsp
     use {
