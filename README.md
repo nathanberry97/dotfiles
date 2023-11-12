@@ -49,34 +49,23 @@ sudo npm install -g dockerfile-language-server-nodejs
 Please ensure to add the following into your rc file once you install
 [starship](https://starship.rs/guide/#%F0%9F%9A%80-installation):
 
-```shell
-# command prompt
-eval "$(starship init bash)"
-```
+To use the prompt line make sure you include the following section as this
+has the command to add the prompt to your command line.
 
-## Bash aliases
+## Aliases
 
-Here are some useful bash aliases I use:
+To use the custom Aliases file please add the following into you `.bashrc` file:
 
 ```shell
-# aliases
-alias vim="nvim"
-alias py="python3"
-alias gh="history | grep"
-alias ls="ls -l"
-alias ..="cd .."
-alias ...="cd ../.."
-
-alias gb="git checkout -b"
-alias gc="git checkout"
-alias ga="git add -A"
-alias gc="git commit -m"
-alias gp="git push"
-alias gpl="git pull"
-alias gl="git log"
-alias gs="git status"
-alias gd="git diff"
-
-alias notes="cd /home/nathan/vimwiki/"
-alias repos="cd /home/nathan/Documents/repos/"
+# Add custom aliases into bash config
+if [ -f ~/.config/aliases/aliases ]; then
+    . ~/.config/aliases/aliases
+fi
 ```
+
+If you are using zsh please add the following into you `.zshrc` file:
+
+```shell
+source $HOME/.config/aliases/aliases
+```
+

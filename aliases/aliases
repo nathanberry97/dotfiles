@@ -1,0 +1,20 @@
+# aliases
+alias docker="podman"
+alias vim="nvim"
+alias gh="history | grep"
+alias ls="ls -l"
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias gb="git checkout -b"
+alias ga="git add -A"
+alias gc="git commit -m"
+alias gp="git push"
+alias gs="git status"
+alias gd="git diff"
+
+alias wiki="cd ${HOME}/vimwiki/"
+alias repos="cd ${HOME}/Documents/repos/"
+
+# command prompt
+eval "$(starship init bash)"
