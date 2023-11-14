@@ -10,6 +10,8 @@ alias gb="git checkout -b"
 alias ga="git add -A"
 alias gc="git commit -m"
 alias gp="git push"
+alias gpn="git push --set-upstream origin"
+alias gpl="git pull"
 alias gs="git status"
 alias gd="git diff"
 
