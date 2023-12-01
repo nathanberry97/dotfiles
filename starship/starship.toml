@@ -1,5 +1,4 @@
 format = """
-$username\
 $hostname\
 $directory\
 $git_branch\
@@ -7,12 +6,6 @@ $git_status\
 $line_break\
 $character
 """
-
-[username]
-style_user  = "bright-yellow"
-format      = '[$user]($style)[@](bright-black)'
-disabled    = false
-show_always = true
 
 [hostname]
 ssh_only = false
