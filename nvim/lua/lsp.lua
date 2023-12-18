@@ -1,4 +1,5 @@
 vim.g.coc_global_extensions = {
+    'coc-lua',
     'coc-pyright',
     'coc-tsserver',
     'coc-sh',

@@ -5,8 +5,9 @@ vim.cmd('colorscheme gruvbox')
 -- Sign column colours
 vim.cmd('hi SignColumn guibg=none ctermbg=none')
 vim.cmd('hi GitGutterAdd guibg=none')
-vim.cmd('hi GitGutterChange guibg=non')
+vim.cmd('hi GitGutterChange guibg=none')
 vim.cmd('hi GitGutterDelete guibg=none')
+vim.cmd('hi CocWarningSign guibg=none')
 
 -- Tab colours
 vim.cmd('hi TabLineFill guifg=8 guibg=none ctermfg=8 ctermbg=none')
