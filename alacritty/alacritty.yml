@@ -15,7 +15,8 @@ key_bindings:
 font:
   size: 25.0
   normal:
-    family: SFMono Nerd Font
+    family: JetBrains Mono
+    style: Regular
 
 env:
   TERM: xterm-256color
