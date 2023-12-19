@@ -12,7 +12,7 @@ vim.cmd('hi CocErrorSign guibg=none')
 
 -- Tab colours
 vim.cmd('hi TabLineFill guifg=8 guibg=none ctermfg=8 ctermbg=none')
-vim.cmd('hi TabLineSel ctermfg=4 ctermbg=none')
+vim.cmd('hi TabLineSel ctermfg=13 ctermbg=none')
 
 -- hide status bar and show tabline
 vim.o.laststatus = 0
