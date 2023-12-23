@@ -19,17 +19,22 @@ return require('packer').startup(function(use)
     use 'morhetz/gruvbox'
     use 'mkitt/tabline.vim'
 
-    -- The following plugin is for my lsp
-    use {
-        'neoclide/coc.nvim',
-        branch = 'master',
-        run = 'yarn install --frozen-lockfile'
-    }
-
     -- The following plugin allows smart pane switching with tmux
     use 'christoomey/vim-tmux-navigator'
 
     -- The following plugin is for terraform Syntax highlighting 
     use 'hashivim/vim-terraform'
+
+    -- The following plugin is for LSPs
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
+    use 'neovim/nvim-lspconfig'
+
+    -- The following plugins are for auto-completion
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'L3MON4D3/LuaSnip'
+    use 'rafamadriz/friendly-snippets'
+    use 'saadparwaiz1/cmp_luasnip'
 
 end)
