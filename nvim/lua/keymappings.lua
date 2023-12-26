@@ -1,9 +1,14 @@
--- leader and keymappings
+-- Leader and key mappings
 vim.g.mapleader = ' '
-vim.keymap.set('n', '<leader>f', ':Files .<CR>')
-vim.keymap.set('n', '<leader>g', ':Ag .<CR>')
+
+-- Standard key mappings
 vim.keymap.set('n', '<leader>n', ':Ex<CR>')
 vim.keymap.set('n', '<leader>s', function() vim.o.spell = not vim.o.spell end)
--- Tab settings
 vim.keymap.set('n', '<leader>t', ':tabedit .<CR>')
-vim.keymap.set('n', '<leader>w', ':W <CR>')
+
+-- fzf key mappings
+vim.keymap.set('n', '<leader>g', ':Ag .<CR>')
+vim.keymap.set('n', '<leader>f', ':Files .<CR>')
+
+-- Configure key mappings for LSP
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})

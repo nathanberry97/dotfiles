@@ -1,34 +1,32 @@
+-- Define LSPs to install and configure
+local LSPS_TO_INSTALL = {
+    'lua_ls',
+    'gopls',
+    'pyright',
+    'tsserver',
+    'html',
+    'cssls',
+}
+local LSPS_TO_CONFIGURE = {
+    require('lspconfig').lua_ls,
+    require('lspconfig').gopls,
+    require('lspconfig').pyright,
+    require('lspconfig').tsserver,
+    require('lspconfig').html,
+    require('lspconfig').cssls,
+}
+
 -- Configure Mason
 require('mason').setup()
-require('mason-lspconfig').setup({
-    ensure_installed = {
-        'lua_ls',
-        'dockerls',
-        'gopls',
-        'pyright',
-        'tsserver',
-        'yamlls',
-        'marksman',
-        'jsonls',
-        'html',
-        'cssls',
-        'bashls',
-    }
-})
-
--- Configure key mappings for LSP
-vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {})
+require('mason-lspconfig').setup({ ensure_installed = LSPS_TO_INSTALL })
 
 -- Setup auto-complete
 local cmp = require('cmp')
-require('luasnip.loaders.from_vscode').lazy_load()
 cmp.setup({
     snippet = {
-      expand = function(args)
-        require('luasnip').lsp_expand(args.body)
-      end,
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body)
+        end,
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -39,7 +37,7 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'luasnip' },
+        { name = 'vsnip' },
     }, {
         { name = 'buffer' },
     }),
@@ -47,16 +45,15 @@ cmp.setup({
 
 -- Configure LSPs for neovim
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require('lspconfig')
-
-lspconfig.lua_ls.setup({ capabilities = capabilities })
-lspconfig.dockerls.setup({ capabilities = capabilities })
-lspconfig.gopls.setup({ capabilities = capabilities })
-lspconfig.pyright.setup({ capabilities = capabilities })
-lspconfig.tsserver.setup({ capabilities = capabilities })
-lspconfig.yamlls.setup({ capabilities = capabilities })
-lspconfig.marksman.setup({ capabilities = capabilities })
-lspconfig.jsonls.setup({ capabilities = capabilities })
-lspconfig.html.setup({ capabilities = capabilities })
-lspconfig.cssls.setup({ capabilities = capabilities })
-lspconfig.bashls.setup({ capabilities = capabilities })
+for i = 1, #LSPS_TO_CONFIGURE do
+    if LSPS_TO_CONFIGURE[i] == require('lspconfig').lua_ls then
+        LSPS_TO_CONFIGURE[i].setup({
+            capabilities = capabilities,
+            settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
+        })
+    else
+        LSPS_TO_CONFIGURE[i].setup({
+            capabilities = capabilities
+        })
+    end
+end

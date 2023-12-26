@@ -1,7 +1,7 @@
--- cursor setting
+-- Cursor setting
 vim.opt.guicursor = ''
 
--- standard settings
+-- Standard settings
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -23,7 +23,7 @@ vim.opt.signcolumn = 'yes'
 vim.opt.errorbells = false
 vim.opt.shortmess:append('c')
 
--- tab settings
+-- Tab settings
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
@@ -31,6 +31,6 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 
--- vim.api.nvim_set_option('clipboard','unnamed')
--- vim.api.nvim_set_option('clipboard','unnamedplus')
-
+-- Copy to clipboard
+vim.api.nvim_set_option('clipboard', 'unnamed')
+vim.api.nvim_set_option('clipboard', 'unnamedplus')

@@ -1,11 +1,11 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
+        'git',
+        'clone',
+        '--filter=blob:none',
+        'https://github.com/folke/lazy.nvim.git',
+        '--branch=stable',
         lazypath,
     })
 end
@@ -20,7 +20,12 @@ local plugins = {
     'vimwiki/vimwiki',
 
     -- The following plugins are for fuzz finding
-    'junegunn/fzf',
+    -- Ensure you have https://github.com/ggreer/the_silver_searcher installed
+    {
+        'junegunn/fzf',
+        dir = '~/.local/share/nvim/lazy/fzf',
+        build = './install --all'
+    },
     'junegunn/fzf.vim',
 
     -- The following plugins are for my theme
@@ -31,16 +36,15 @@ local plugins = {
     'christoomey/vim-tmux-navigator',
 
     -- The following plugin is for LSPs
+    'neovim/nvim-lspconfig',
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
-    'neovim/nvim-lspconfig',
 
     -- The following plugins are for auto-completion
     'hrsh7th/nvim-cmp',
     'hrsh7th/cmp-nvim-lsp',
-    'L3MON4D3/LuaSnip',
-    'rafamadriz/friendly-snippets',
-    'saadparwaiz1/cmp_luasnip',
+    'hrsh7th/cmp-vsnip',
+    'hrsh7th/vim-vsnip',
 }
 
 local opts = {}
