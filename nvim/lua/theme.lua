@@ -22,5 +22,5 @@ local gitGutter = {
 }
 
 for i = 1, #gitGutter do
-   vim.cmd(string.format('hi %s guibg=none', gitGutter[i]))
+    vim.cmd(string.format('hi %s guibg=none', gitGutter[i]))
 end
