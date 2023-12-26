@@ -1,24 +1,25 @@
 -- Define LSPs to install and configure
-local LSPS_TO_INSTALL = {
-    'lua_ls',
-    'gopls',
-    'pyright',
-    'tsserver',
-    'html',
-    'cssls',
+local lsps = {
+    { require('lspconfig').lua_ls, 'lua_ls' },
+    { require('lspconfig').gopls, 'gopls' },
+    { require('lspconfig').pyright, 'pyright' },
+    { require('lspconfig').tsserver, 'tsserver' },
+    { require('lspconfig').html, 'html' },
+    { require('lspconfig').cssls, 'cssls' },
+    { require('lspconfig').dockerls, 'dockerls' },
+    { require('lspconfig').bashls, 'bashls' },
 }
-local LSPS_TO_CONFIGURE = {
-    require('lspconfig').lua_ls,
-    require('lspconfig').gopls,
-    require('lspconfig').pyright,
-    require('lspconfig').tsserver,
-    require('lspconfig').html,
-    require('lspconfig').cssls,
-}
+local lspToConfigure = {}
+local lspToInstall = {}
+
+for i = 1, #lsps do
+   table.insert(lspToConfigure, lsps[i][1])
+   table.insert(lspToInstall, lsps[i][2])
+end
 
 -- Configure Mason
 require('mason').setup()
-require('mason-lspconfig').setup({ ensure_installed = LSPS_TO_INSTALL })
+require('mason-lspconfig').setup({ ensure_installed = lspToInstall })
 
 -- Setup auto-complete
 local cmp = require('cmp')
@@ -45,14 +46,14 @@ cmp.setup({
 
 -- Configure LSPs for neovim
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-for i = 1, #LSPS_TO_CONFIGURE do
-    if LSPS_TO_CONFIGURE[i] == require('lspconfig').lua_ls then
-        LSPS_TO_CONFIGURE[i].setup({
+for i = 1, #lspToConfigure do
+    if lspToConfigure[i] == require('lspconfig').lua_ls then
+        lspToConfigure[i].setup({
             capabilities = capabilities,
             settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
         })
     else
-        LSPS_TO_CONFIGURE[i].setup({
+        lspToConfigure[i].setup({
             capabilities = capabilities
         })
     end

@@ -12,3 +12,11 @@ vim.keymap.set('n', '<leader>f', ':Files .<CR>')
 
 -- Configure key mappings for LSP
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+
+-- Git key mappings vim-fugitive
+vim.keymap.set('n', 'gs', ':Git status <CR>')
+vim.keymap.set('n', 'ga', ':Git add -A <CR>')
+vim.keymap.set('n', 'gc', ':Git commit <CR>')
+
+-- Search and replace
+vim.keymap.set('n', '<leader>r', [[:%s/<C-r><C-w>//g<Left><Left>]])

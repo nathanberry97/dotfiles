@@ -22,6 +22,7 @@ vim.opt.signcolumn = 'yes'
 
 vim.opt.errorbells = false
 vim.opt.shortmess:append('c')
+vim.opt.shortmess:append('I')
 
 -- Tab settings
 vim.opt.expandtab = true

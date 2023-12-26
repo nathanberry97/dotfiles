@@ -28,6 +28,11 @@ Please ensure to add the following into your rc file once you install
 To use the prompt line make sure you include the following section as this
 has the command to add the prompt to your command line.
 
+```shell
+# command prompt
+eval "$(starship init bash)"
+```
+
 ## Aliases
 
 To use the custom Aliases file please add the following into you `.bashrc` file:

@@ -1,6 +1,6 @@
 # aliases
 alias docker="podman"
-alias vim="nvim"
+alias vi="nvim ."
 alias gh="history | grep"
 alias ls="ls -l"
 alias ..="cd .."
@@ -11,7 +11,7 @@ alias ga="git add -A"
 alias gc="git commit -m"
 alias gp="git push"
 alias gpn="git push --set-upstream origin"
-alias gpl="git pull"
+alias gP="git pull"
 alias gs="git status"
 alias gd="git diff"
 

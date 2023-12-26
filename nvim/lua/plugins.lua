@@ -45,6 +45,9 @@ local plugins = {
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
+
+    -- Plugin the for integrated git support
+    'tpope/vim-fugitive'
 }
 
 local opts = {}
