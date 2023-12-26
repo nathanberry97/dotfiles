@@ -9,6 +9,7 @@ vim.keymap.set('n', '<leader>t', ':tabedit .<CR>')
 -- fzf key mappings
 vim.keymap.set('n', '<leader>g', ':Ag .<CR>')
 vim.keymap.set('n', '<leader>f', ':Files .<CR>')
+vim.keymap.set('n', '<leader>h', ':History <CR>')
 
 -- Configure key mappings for LSP
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
@@ -17,6 +18,7 @@ vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 vim.keymap.set('n', 'gs', ':Git status <CR>')
 vim.keymap.set('n', 'ga', ':Git add -A <CR>')
 vim.keymap.set('n', 'gc', ':Git commit <CR>')
+vim.keymap.set('n', 'gp', ':Git push <CR>')
 
 -- Search and replace
 vim.keymap.set('n', '<leader>r', [[:%s/<C-r><C-w>//g<Left><Left>]])

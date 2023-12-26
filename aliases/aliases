@@ -1,6 +1,7 @@
 # aliases
 alias docker="podman"
 alias vi="nvim ."
+alias vim="nvim"
 alias gh="history | grep"
 alias ls="ls -l"
 alias ..="cd .."

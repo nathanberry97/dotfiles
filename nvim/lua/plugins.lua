@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    -- The following plug in is for my side bar
+    -- The following plugins are for my side bar
     'airblade/vim-gitgutter',
     'dense-analysis/ale',
 
@@ -32,10 +32,10 @@ local plugins = {
     'morhetz/gruvbox',
     'mkitt/tabline.vim',
 
-    -- The following plugin allows smart pane switching with tmux
+    -- The following plugin is to allow smart pane switching with tmux
     'christoomey/vim-tmux-navigator',
 
-    -- The following plugin is for LSPs
+    -- The following plugins is for LSPs
     'neovim/nvim-lspconfig',
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
@@ -46,8 +46,11 @@ local plugins = {
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
 
-    -- Plugin the for integrated git support
-    'tpope/vim-fugitive'
+    -- The following plugin for integrated git support
+    'tpope/vim-fugitive',
+
+    -- The following plugin is for github copliot
+    'github/copilot.vim',
 }
 
 local opts = {}
