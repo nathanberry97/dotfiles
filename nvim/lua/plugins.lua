@@ -30,7 +30,7 @@ local plugins = {
 
     -- The following plugins are for my theme
     'morhetz/gruvbox',
-    'mkitt/tabline.vim',
+    'nathanberry97/dumbtab.nvim',
 
     -- The following plugin is to allow smart pane switching with tmux
     'christoomey/vim-tmux-navigator',

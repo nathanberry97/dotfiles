@@ -4,7 +4,6 @@ vim.g.mapleader = ' '
 -- Standard key mappings
 vim.keymap.set('n', '<leader>n', ':Ex<CR>')
 vim.keymap.set('n', '<leader>s', function() vim.o.spell = not vim.o.spell end)
-vim.keymap.set('n', '<leader>t', ':tabedit .<CR>')
 
 -- fzf key mappings
 vim.keymap.set('n', '<leader>g', ':Ag .<CR>')
