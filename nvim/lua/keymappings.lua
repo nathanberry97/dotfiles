@@ -10,6 +10,7 @@ vim.keymap.set('n', '<leader>t', ':tabedit .<CR>')
 vim.keymap.set('n', '<leader>g', ':Ag .<CR>')
 vim.keymap.set('n', '<leader>f', ':Files .<CR>')
 vim.keymap.set('n', '<leader>h', ':History <CR>')
+vim.keymap.set('n', '<leader>c', ':Commits <CR>')
 
 -- Configure key mappings for LSP
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
