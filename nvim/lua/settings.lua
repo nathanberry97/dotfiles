@@ -35,3 +35,6 @@ vim.opt.shiftwidth = 4
 -- Copy to clipboard
 vim.api.nvim_set_option('clipboard', 'unnamed')
 vim.api.nvim_set_option('clipboard', 'unnamedplus')
+
+-- Copilot enable filetypes
+vim.g.copilot_filetypes = { markdown = true }
