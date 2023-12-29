@@ -16,7 +16,7 @@ alias gP="git pull"
 alias gs="git status"
 alias gd="git diff"
 
-alias wiki="cd ${HOME}/vimwiki/"
+alias wiki="cd ${HOME}/Documents/wiki/"
 alias repos="cd ${HOME}/Documents/repos/"
 
 # command prompt
