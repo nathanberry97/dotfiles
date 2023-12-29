@@ -36,5 +36,14 @@ vim.opt.shiftwidth = 4
 vim.api.nvim_set_option('clipboard', 'unnamed')
 vim.api.nvim_set_option('clipboard', 'unnamedplus')
 
--- Copilot enable filetypes
+-- Enable Copilot for markdown
 vim.g.copilot_filetypes = { markdown = true }
+
+-- Set vimwiki to use markdown
+vim.g.vimwiki_list = {
+    {
+        path = '~/Documents/wiki',
+        syntax = 'markdown',
+        ext = '.md',
+    },
+}
