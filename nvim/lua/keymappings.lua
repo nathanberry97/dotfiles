@@ -6,8 +6,8 @@ vim.keymap.set('n', '<leader>n', ':Ex<CR>')
 vim.keymap.set('n', '<leader>s', function() vim.o.spell = not vim.o.spell end)
 
 -- fzf key mappings
-vim.keymap.set('n', '<leader>g', ':Ag .<CR>')
 vim.keymap.set('n', '<leader>f', ':Files .<CR>')
+vim.keymap.set('n', '<leader>g', ':Ag <CR>')
 vim.keymap.set('n', '<leader>h', ':History <CR>')
 vim.keymap.set('n', '<leader>c', ':Commits <CR>')
 
