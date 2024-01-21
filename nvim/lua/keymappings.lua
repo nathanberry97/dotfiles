@@ -30,3 +30,12 @@ vim.keymap.set('n', '<Tab>', '<Plug>VimwikiNextLink')
 vim.keymap.set('n', '<S-Tab>', '<Plug>VimwikiPrevLink')
 vim.keymap.set('n', '<leader>ww', '<Plug>VimwikiIndex')
 vim.keymap.set('n', '<leader>wt', ':tabnew<CR>:VimwikiIndex<CR>')
+
+-- Harpoon key mappings
+local harpoon = require('harpoon')
+harpoon:setup()
+
+vim.keymap.set('n', '<leader>a', function() harpoon:list():append() end)
+vim.keymap.set('n', '<C-e>', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set('n', 'hn', function() harpoon:list():prev() end)
+vim.keymap.set('n', 'hp', function() harpoon:list():next() end)
