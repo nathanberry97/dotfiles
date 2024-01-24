@@ -13,7 +13,7 @@ key_bindings:
   - { key: F11, action: ToggleFullscreen }
 
 font:
-  size: 25.0
+  size: 33.0
   normal:
     family: JetBrains Mono
     style: Regular
