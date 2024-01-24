@@ -32,11 +32,6 @@ local plugins = {
     'morhetz/gruvbox',
 
     -- The following plugin is for managing buffers and tabs
-    {
-        'ThePrimeagen/harpoon',
-        branch = 'harpoon2',
-        dependencies = { 'nvim-lua/plenary.nvim' }
-    },
     'nathanberry97/dumbtab.nvim',
 
     -- The following plugin is to allow smart pane switching with tmux
