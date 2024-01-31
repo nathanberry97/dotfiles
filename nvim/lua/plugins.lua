@@ -30,6 +30,7 @@ local plugins = {
 
     -- The following plugins are for my theme
     'morhetz/gruvbox',
+    'catppuccin/nvim',
 
     -- The following plugin is for managing buffers and tabs
     'nathanberry97/dumbtab.nvim',

@@ -3,7 +3,23 @@ vim.o.laststatus = 0
 
 -- colour scheme
 vim.cmd('autocmd ColorScheme * hi Normal ctermbg=none')
-vim.cmd('colorscheme gruvbox')
+
+-- Gruvbox theme
+-- vim.cmd('colorscheme gruvbox')
+
+-- Catppuccino theme
+require("catppuccin").setup({
+    flavour = "frappe",
+    custom_highlights = function(colors)
+        return {
+            TabLineSel = { fg = colors.pink },
+        }
+    end
+})
+vim.cmd.colorscheme "catppuccin"
+vim.cmd('hi TabLine guibg=none ctermbg=none')
+vim.cmd('hi TabLineFill guibg=none ctermbg=none')
+vim.cmd('hi TabLineSel guibg=none ctermbg=none')
 
 -- Sign column colours
 vim.cmd('hi SignColumn guibg=none ctermbg=none')
@@ -17,7 +33,7 @@ local gitGutter = {
 }
 
 for i = 1, #gitGutter do
-    vim.cmd(string.format('hi %s guibg=none', gitGutter[i]))
+    vim.cmd(string.format('hi %s guibg=none guifg=none', gitGutter[i]))
 end
 
 -- Setup dumbtab configuration
