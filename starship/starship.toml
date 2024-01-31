@@ -17,7 +17,7 @@ truncation_length = 1
 format            = '[$path]($style)'
 
 [git_branch]
-style  = "red"
+style  = "bright-black"
 format = '[\(](bright-black)[$branch]($style)[\)](bright-black)'
 
 [git_status]
