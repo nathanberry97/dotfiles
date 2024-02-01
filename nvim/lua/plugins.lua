@@ -20,14 +20,13 @@ local plugins = {
     'vimwiki/vimwiki',
 
     -- The following plugins are for fuzz finding
-    -- Ensure you have https://github.com/BurntSushi/ripgrep installed
+    -- Ensure you have https://github.com/ggreer/the_silver_searcher installed
     {
         'junegunn/fzf',
         dir = '~/.local/share/nvim/lazy/fzf',
         build = './install --all'
     },
-    'nvim-lua/plenary.nvim',
-    'nvim-telescope/telescope.nvim',
+    'junegunn/fzf.vim',
 
     -- The following plugins are for my theme
     'morhetz/gruvbox',
