@@ -1,10 +1,8 @@
 -- hide status bar
 vim.o.laststatus = 0
 
--- colour scheme
-vim.cmd('autocmd ColorScheme * hi Normal ctermbg=none')
-
 -- Gruvbox theme
+-- vim.cmd('autocmd ColorScheme * hi Normal ctermbg=none')
 -- vim.cmd('colorscheme gruvbox')
 
 -- Catppuccino theme

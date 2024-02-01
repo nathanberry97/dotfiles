@@ -6,8 +6,8 @@ vim.keymap.set('n', '<leader>n', ':Ex<CR>')
 vim.keymap.set('n', '<leader>s', function() vim.o.spell = not vim.o.spell end)
 
 -- fzf key mappings
-vim.keymap.set('n', '<leader>f', ':Files .<CR>')
-vim.keymap.set('n', '<leader>g', ':Ag <CR>')
+vim.keymap.set('n', '<leader>f', ':Telescope find_files <CR>')
+vim.keymap.set('n', '<leader>g', ':Telescope live_grep <CR>')
 
 -- Configure key mappings for LSP
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
