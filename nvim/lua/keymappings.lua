@@ -12,8 +12,8 @@ vim.keymap.set('n', '<leader>g', ':Rg<CR>')
 -- Configure key mappings for LSP
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 
--- Git key mappings vim-fugitive
-vim.keymap.set('n', 'gs', ':Git status <CR>')
+-- Git key mappings vim-fugitive and fzf.vim
+vim.keymap.set('n', 'gs', ':GFiles?<CR>')
 vim.keymap.set('n', 'ga', ':Git add -A <CR>')
 vim.keymap.set('n', 'gc', ':Git commit <CR>')
 vim.keymap.set('n', 'gp', ':Git push <CR>')
