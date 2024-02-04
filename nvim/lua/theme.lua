@@ -10,7 +10,7 @@ require("catppuccin").setup({
     flavour = "frappe",
     custom_highlights = function(colors)
         return {
-            TabLineSel = { fg = colors.pink },
+            TabLineSel = { fg = colors.blue },
         }
     end
 })

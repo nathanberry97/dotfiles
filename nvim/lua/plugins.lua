@@ -57,6 +57,9 @@ local plugins = {
 
     -- The following plugin is for github copliot
     'github/copilot.vim',
+
+    -- The following plugin is for terraform
+    'hashivim/vim-terraform',
 }
 
 local opts = {}

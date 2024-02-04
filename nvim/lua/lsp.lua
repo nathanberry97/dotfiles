@@ -8,6 +8,8 @@ local lsps = {
     { require('lspconfig').cssls, 'cssls' },
     { require('lspconfig').dockerls, 'dockerls' },
     { require('lspconfig').bashls, 'bashls' },
+    { require('lspconfig').terraformls, 'terraformls' },
+    { require('lspconfig').tflint, 'tflint' },
 }
 local lspToConfigure = {}
 local lspToInstall = {}
