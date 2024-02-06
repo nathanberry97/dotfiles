@@ -1,15 +1,15 @@
 -- Define LSPs to install and configure
 local lsps = {
-    { require('lspconfig').lua_ls, 'lua_ls' },
-    { require('lspconfig').gopls, 'gopls' },
-    { require('lspconfig').pyright, 'pyright' },
-    { require('lspconfig').tsserver, 'tsserver' },
-    { require('lspconfig').html, 'html' },
+    { require('lspconfig').bashls, 'bashls' },
     { require('lspconfig').cssls, 'cssls' },
     { require('lspconfig').dockerls, 'dockerls' },
-    { require('lspconfig').bashls, 'bashls' },
+    { require('lspconfig').gopls, 'gopls' },
+    { require('lspconfig').html, 'html' },
+    { require('lspconfig').lua_ls, 'lua_ls' },
+    { require('lspconfig').pyright, 'pyright' },
     { require('lspconfig').terraformls, 'terraformls' },
     { require('lspconfig').tflint, 'tflint' },
+    { require('lspconfig').tsserver, 'tsserver' },
 }
 local lspToConfigure = {}
 local lspToInstall = {}

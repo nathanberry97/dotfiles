@@ -1,10 +1,6 @@
 -- hide status bar
 vim.o.laststatus = 0
 
--- Gruvbox theme
--- vim.cmd('autocmd ColorScheme * hi Normal ctermbg=none')
--- vim.cmd('colorscheme gruvbox')
-
 -- Catppuccino theme
 require("catppuccin").setup({
     flavour = "frappe",
@@ -35,4 +31,4 @@ for i = 1, #gitGutter do
 end
 
 -- Setup dumbtab configuration
-require('dumbtab').setup({})
+require('dumbtab').setup()

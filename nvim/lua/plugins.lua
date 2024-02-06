@@ -12,15 +12,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    -- The following plugins are for my side bar
+    -- The following plugins are for git
     'airblade/vim-gitgutter',
-    'dense-analysis/ale',
+    'tpope/vim-fugitive',
 
     -- The following plugin is for note taking
     'vimwiki/vimwiki',
 
     -- The following plugins are for fuzz finding
-    -- Ensure you have https://github.com/ggreer/the_silver_searcher installed
     {
         'junegunn/fzf',
         dir = '~/.local/share/nvim/lazy/fzf',
@@ -29,10 +28,9 @@ local plugins = {
     'junegunn/fzf.vim',
 
     -- The following plugins are for my theme
-    'morhetz/gruvbox',
     'catppuccin/nvim',
 
-    -- The following plugin is for managing buffers and tabs
+    -- The following plugin is for managing tabs
     'nathanberry97/dumbtab.nvim',
 
     -- The following plugin is to allow smart pane switching with tmux
@@ -51,9 +49,6 @@ local plugins = {
     'hrsh7th/cmp-cmdline',
     'hrsh7th/cmp-vsnip',
     'hrsh7th/vim-vsnip',
-
-    -- The following plugin for integrated git support
-    'tpope/vim-fugitive',
 
     -- The following plugin is for github copliot
     'github/copilot.vim',
