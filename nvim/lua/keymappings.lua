@@ -5,6 +5,7 @@ vim.g.mapleader = ' '
 vim.keymap.set('n', '-', ':Ex<CR>')
 vim.keymap.set('n', '<leader>s', function() vim.o.spell = not vim.o.spell end)
 vim.keymap.set('n', '<leader>r', [[:%s/<C-r><C-w>//g<Left><Left>]])
+vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessioniser<CR>')
 
 -- fzf key mappings
 vim.keymap.set('n', '<leader>f', ':Files<CR>')
