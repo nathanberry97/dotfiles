@@ -16,7 +16,6 @@ alias gP="git pull"
 alias gs="git status"
 alias gd="git diff"
 
-alias wiki="cd ${HOME}/Documents/wiki/"
 alias repos="cd ${HOME}/Documents/repos/"
 
 # fzf Catppuccino theme

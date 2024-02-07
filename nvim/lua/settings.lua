@@ -35,7 +35,7 @@ vim.g.copilot_filetypes = { markdown = true }
 vim.g.vimwiki_global_ext = 0
 vim.g.vimwiki_list = {
     {
-        path = '~/Documents/wiki',
+        path = '~/Documents/repos/wiki',
         syntax = 'markdown',
         ext = '.md',
     },
