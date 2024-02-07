@@ -25,5 +25,3 @@ vim.g.vimwiki_key_mappings = { all_maps = 0 }
 vim.keymap.set('n', '<enter>', '<Plug>VimwikiFollowLink')
 vim.keymap.set('n', '<Tab>', '<Plug>VimwikiNextLink')
 vim.keymap.set('n', '<S-Tab>', '<Plug>VimwikiPrevLink')
-vim.keymap.set('n', '<leader>ww', '<Plug>VimwikiIndex')
-vim.keymap.set('n', '<leader>wt', ':tabnew<CR>:VimwikiIndex<CR>')
