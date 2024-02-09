@@ -8,17 +8,17 @@ vim.keymap.set('n', '<leader>r', [[:%s/<C-r><C-w>//g<Left><Left>]])
 vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessioniser<CR>')
 
 -- fzf key mappings
-vim.keymap.set('n', '<leader>f', ':Files<CR>')
 vim.keymap.set('n', '<leader>g', ':Rg<CR>') -- Ensure you have the_silver_searcher installed
-
--- Configure key mappings for LSP
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+vim.keymap.set('n', '<leader>f', ':GFiles<CR>')
+vim.keymap.set('n', 'gs', ':GFiles?<CR>')
 
 -- Git key mappings vim-fugitive
-vim.keymap.set('n', 'gs', ':GFiles?<CR>')
 vim.keymap.set('n', 'ga', ':Git add -A <CR>')
 vim.keymap.set('n', 'gc', ':Git commit <CR>')
 vim.keymap.set('n', 'gp', ':Git push <CR>')
+
+-- Configure key mappings for LSP
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
 
 -- Disable vimwiki keymappings and enable a select few
 vim.g.vimwiki_key_mappings = { all_maps = 0 }
