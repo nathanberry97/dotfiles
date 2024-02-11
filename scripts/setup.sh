@@ -25,6 +25,7 @@ installPackages(){
         pandoc
         podman
         pre-commit
+        rectangle
         starship
         terraform
         the_silver_searcher
