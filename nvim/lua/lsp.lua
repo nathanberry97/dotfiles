@@ -1,14 +1,17 @@
 -- Define LSPs to install and configure
 local lsps = {
+    -- LuaFormatter off
     {require('lspconfig').bashls, 'bashls'},
     {require('lspconfig').cssls, 'cssls'},
     {require('lspconfig').dockerls, 'dockerls'},
-    {require('lspconfig').gopls, 'gopls'}, {require('lspconfig').html, 'html'},
+    {require('lspconfig').gopls, 'gopls'},
+    {require('lspconfig').html, 'html'},
     {require('lspconfig').lua_ls, 'lua_ls'},
     {require('lspconfig').pyright, 'pyright'},
     {require('lspconfig').terraformls, 'terraformls'},
     {require('lspconfig').tflint, 'tflint'},
     {require('lspconfig').tsserver, 'tsserver'}
+    -- LuaFormatter on
 }
 local lspToConfigure = {}
 local lspToInstall = {}
