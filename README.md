@@ -6,46 +6,32 @@
 
 ![image](.images/neovim.png)
 
-![image](.images/terminal.png)
+## Installation
 
-## Software to install allow code searching feature within neovim
-
-[Install the\_silver\_searcher to allow code searching within neovim with fzf.vim package](https://github.com/ggreer/the_silver_searcher)
+To install the configurations please run the following commands:
 
 ```shell
-dnf install the_silver_searcher
-apt-get install silversearcher-ag
+make brew
+make git
+make install
+make dotfiles
 ```
 
-> To see the key mapping I have set for this please look into the
-> `./nvim/lua/keymappings.lua` file
+> The make commands will do the following:
+>  - `make brew` will install homebrew
+>  - `make git` will set your git configurations
+>  - `make install` will install the necessary packages using homebrew
+>  - `make dotfiles` will setup the dotfiles
 
-## Starship prompt
+This is intended to be used on a fresh install of macOS.
+You can rerun the `make dotfiles`  and `make install` command to update the
+configurations.
 
-Please ensure to add the following into your rc file once you install
-[starship](https://starship.rs/guide/#%F0%9F%9A%80-installation):
+## Zshrc
 
-To use the prompt line make sure you include the following section as this
-has the command to add the prompt to your command line.
-
-```shell
-# command prompt
-eval "$(starship init bash)"
-```
-
-## Aliases
-
-To use the custom Aliases file please add the following into you `.bashrc` file:
+To use the custom Aliases file please add the following into you `.zshrc` file:
 
 ```shell
-# Add custom aliases into bash config
-if [ -f ~/.config/aliases/aliases ]; then
-    . ~/.config/aliases/aliases
-fi
-```
-
-If you are using zsh please add the following into you `.zshrc` file:
-
-```shell
+# Add to .zshrc
 source $HOME/.config/aliases/aliases
 ```
