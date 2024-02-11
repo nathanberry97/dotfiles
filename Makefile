@@ -24,7 +24,7 @@ install: ## Install all dependencies
 	@./scripts/setup.sh -i
 
 .PHONY: dotfiles
-setDotfiles: ## Set dotfiles
+dotfiles: ## Set dotfiles
 	@echo "Setting dotfiles"
 	@chmod +x ./scripts/setup.sh
 	@./scripts/setup.sh -d

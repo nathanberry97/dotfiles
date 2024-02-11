@@ -1,16 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
-        'git',
-        'clone',
-        '--filter=blob:none',
-        'https://github.com/folke/lazy.nvim.git',
-        '--branch=stable',
-        lazypath,
+        'git', 'clone', '--filter=blob:none',
+        'https://github.com/folke/lazy.nvim.git', '--branch=stable', lazypath
     })
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- LuaFormatter off
 local plugins = {
     -- The following plugins are for git integration
     'airblade/vim-gitgutter',
@@ -18,6 +15,21 @@ local plugins = {
 
     -- The following plugin is for note taking
     'vimwiki/vimwiki',
+
+    -- The following plugin is for github copliot
+    'github/copilot.vim',
+
+    -- The following plugin is for terraform
+    'hashivim/vim-terraform',
+
+    -- The following plugin is my current theme
+    'catppuccin/nvim',
+
+    -- The following plugin is for managing tabs
+    'nathanberry97/dumbtab.nvim',
+
+    -- The following plugin is to allow smart pane switching with tmux
+    'christoomey/vim-tmux-navigator',
 
     -- The following plugins are for fuzz finding
     {
@@ -29,21 +41,12 @@ local plugins = {
         }
     },
 
-    -- The following plugin is my current theme
-    'catppuccin/nvim',
-
-    -- The following plugin is for managing tabs
-    'nathanberry97/dumbtab.nvim',
-
-    -- The following plugin is to allow smart pane switching with tmux
-    'christoomey/vim-tmux-navigator',
-
     -- The following plugins are for LSPs
     {
         'williamboman/mason.nvim',
         dependencies = {
             'neovim/nvim-lspconfig',
-            'williamboman/mason-lspconfig.nvim',
+            'williamboman/mason-lspconfig.nvim'
         }
     },
 
@@ -56,17 +59,10 @@ local plugins = {
             'hrsh7th/cmp-path',
             'hrsh7th/cmp-cmdline',
             'hrsh7th/cmp-vsnip',
-            'hrsh7th/vim-vsnip',
+            'hrsh7th/vim-vsnip'
         }
-    },
-
-    -- The following plugin is for github copliot
-    'github/copilot.vim',
-
-    -- The following plugin is for terraform
-    'hashivim/vim-terraform',
+    }
 }
+-- LuaFormatter on
 
-local opts = {}
-
-require('lazy').setup(plugins, opts)
+require('lazy').setup(plugins, {})

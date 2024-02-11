@@ -29,14 +29,10 @@ vim.api.nvim_set_option('clipboard', 'unnamed')
 vim.api.nvim_set_option('clipboard', 'unnamedplus')
 
 -- Enable Copilot for markdown
-vim.g.copilot_filetypes = { markdown = true }
+vim.g.copilot_filetypes = {markdown = true}
 
 -- Set vimwiki settings
 vim.g.vimwiki_global_ext = 0
 vim.g.vimwiki_list = {
-    {
-        path = '~/Documents/repos/wiki',
-        syntax = 'markdown',
-        ext = '.md',
-    },
+    {path = '~/Documents/repos/wiki', syntax = 'markdown', ext = '.md'}
 }

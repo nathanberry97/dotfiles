@@ -1,6 +1,6 @@
 # dotfiles
 
-> This repo is intended to store my configurations for things such as tmux and neovim.
+> This repo is intended to store my configurations for things such as tmux and neovim
 
 ## preview
 
@@ -18,13 +18,14 @@ make dotfiles
 ```
 
 > The make commands will do the following:
->  - `make brew` will install homebrew
->  - `make git` will set your git configurations
->  - `make install` will install the necessary packages using homebrew
->  - `make dotfiles` will setup the dotfiles
+>
+> -   `make brew` will install homebrew
+> -   `make git` will set your git configurations
+> -   `make install` will install the necessary packages using homebrew
+> -   `make dotfiles` will setup the dotfiles
 
 This is intended to be used on a fresh install of macOS.
-You can rerun the `make dotfiles`  and `make install` command to update the
+You can rerun the `make dotfiles` and `make install` command to update the
 configurations.
 
 ## Zshrc
