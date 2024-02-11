@@ -8,8 +8,9 @@ vim.keymap.set('n', '<leader>r', [[:%s/<C-r><C-w>//g<Left><Left>]])
 vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessioniser<CR>')
 
 -- fzf key mappings
-vim.keymap.set('n', '<leader>g', ':Rg<CR>') -- Ensure you have the_silver_searcher installed
+vim.keymap.set('n', '<leader>g', ':Rg<CR>')
 vim.keymap.set('n', '<leader>f', ':GFiles<CR>')
+vim.keymap.set('n', 'ff', ':Files<CR>')
 vim.keymap.set('n', 'gs', ':GFiles?<CR>')
 
 -- Git key mappings vim-fugitive
