@@ -1,11 +1,10 @@
-# aliases
+# Aliases
 alias docker="podman"
 alias vi="nvim ."
 alias vim="nvim"
 alias gh="history | grep"
 alias ls="ls -l"
 alias ..="cd .."
-alias ...="cd ../.."
 
 alias gb="git checkout -b"
 alias ga="git add -A"
@@ -16,7 +15,13 @@ alias gP="git pull"
 alias gs="git status"
 alias gd="git diff"
 
-alias repos="cd ${HOME}/Documents/repos/"
+# Add local and go bin to path
+export PATH=$PATH:${HOME}/.local/bin
+export PATH=$PATH:${HOME}/go/bin
+
+# Playdate vars
+export PLAYDATE_SDK_PATH=${HOME}/Developer/PlaydateSDK
+export PATH=$PATH:${PLAYDATE_SDK_PATH}/bin
 
 # fzf Catppuccino theme
 export FZF_DEFAULT_OPTS=" \
@@ -25,8 +30,13 @@ export FZF_DEFAULT_OPTS=" \
 --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284 \
 "
 
+# Path for NVM
+export NVM_DIR="${HOME}/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
 # tmux fzf sessioniser keybinding
 bindkey -s ^f "tmux-sessioniser\n"
 
-# command prompt
-eval "$(starship init bash)"
+# command prompt theme
+eval "$(starship init zsh)"
