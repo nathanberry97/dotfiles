@@ -26,7 +26,7 @@ make dotfiles
 
 This is intended to be used on a fresh install of macOS.
 You can rerun the `make dotfiles` and `make install` command to update the
-configurations.
+configurations and packages.
 
 ## Zshrc
 
