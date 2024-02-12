@@ -26,9 +26,9 @@ installPackages(){
         podman
         pre-commit
         rectangle
+        ripgrep
         starship
         terraform
-        the_silver_searcher
         tmux
         yq
     )
