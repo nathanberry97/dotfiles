@@ -19,9 +19,6 @@ local plugins = {
     -- The following plugin is for github copliot
     'github/copilot.vim',
 
-    -- The following plugin is for terraform
-    'hashivim/vim-terraform',
-
     -- The following plugin is my current theme
     'catppuccin/nvim',
 
@@ -61,7 +58,14 @@ local plugins = {
             'hrsh7th/cmp-vsnip',
             'hrsh7th/vim-vsnip'
         }
-    }
+    },
+
+    -- The following plugin is for treesitter
+    {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    },
+
 }
 -- LuaFormatter on
 
