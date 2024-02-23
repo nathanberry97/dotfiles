@@ -19,10 +19,6 @@ alias gd="git diff"
 export PATH=$PATH:${HOME}/.local/bin
 export PATH=$PATH:${HOME}/go/bin
 
-# Playdate vars
-export PLAYDATE_SDK_PATH=${HOME}/Developer/PlaydateSDK
-export PATH=$PATH:${PLAYDATE_SDK_PATH}/bin
-
 # fzf Catppuccino theme
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
@@ -30,13 +26,8 @@ export FZF_DEFAULT_OPTS=" \
 --color=marker:#f2d5cf,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284 \
 "
 
-# Path for NVM
-export NVM_DIR="${HOME}/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
-
 # tmux fzf sessioniser keybinding
-bindkey -s ^f "tmux-sessioniser\n"
+bind -x '"\C-f": tmux-sessioniser'
 
 # command prompt theme
-eval "$(starship init zsh)"
+eval "$(starship init bash)"

@@ -24,10 +24,6 @@ vim.opt.smartindent = true
 vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
 
--- Copy to clipboard
-vim.api.nvim_set_option('clipboard', 'unnamed')
-vim.api.nvim_set_option('clipboard', 'unnamedplus')
-
 -- Enable Copilot for markdown
 vim.g.copilot_filetypes = {markdown = true}
 
