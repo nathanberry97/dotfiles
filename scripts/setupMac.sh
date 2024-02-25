@@ -7,22 +7,11 @@ installHomebrew(){
 installPackages(){
     packageList=(
         alacritty
-        awscli
-        cfn-lint
-        go
-        jq
-        lua
         neovim
-        nvm
-        pandoc
-        podman
-        pre-commit
         rectangle
         ripgrep
         starship
-        terraform
         tmux
-        yq
     )
 
     for package in "${packageList[@]}"; do
