@@ -3,9 +3,9 @@
 installPackages(){
     packageList=(
         alacritty
+        feh
         i3
         neovim
-        nitrogen
         picom
         ripgrep
         rofi
@@ -26,6 +26,7 @@ installPackages(){
 purgeOldDotfiles(){
     rm -rf ~/.config/alacritty/alacritty.toml
     rm -rf ~/.config/aliases/aliases
+    rm -rf ~/.config/i3/background.png
     rm -rf ~/.config/i3/config
     rm -rf ~/.config/nvim/init.vim
     rm -rf ~/.config/nvim/lua
@@ -56,6 +57,7 @@ setDotfiles(){
     cp -r ./nvim/ ~/.config/
     cp ./alacritty/linux.toml ~/.config/alacritty/alacritty.toml
     cp ./aliases/bash ~/.config/aliases/aliases
+    cp ./i3/background.png ~/.config/i3/background.png
     cp ./i3/config ~/.config/i3/config
     cp ./picom/picom.conf ~/.config/picom/picom.conf
     cp ./rofi/config.rasi ~/.config/rofi/config.rasi

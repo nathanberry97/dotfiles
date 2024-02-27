@@ -91,5 +91,5 @@ bindsym --release $mod+l exec --no-startup-id slock
 bindsym $mod+b exec --no-startup-id rofi-blu
 
 # Allow for background images and rounded corners
-exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id feh --bg-scale ~/.config/i3/background.png
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
