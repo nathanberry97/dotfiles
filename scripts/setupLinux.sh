@@ -12,6 +12,7 @@ installPackages(){
         slock
         starship
         tmux
+        xautolock
     )
 
     sudo dnf update -y
