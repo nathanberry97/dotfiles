@@ -16,9 +16,6 @@ local plugins = {
     -- The following plugin is for note taking
     'vimwiki/vimwiki',
 
-    -- The following plugin is for github copliot
-    'github/copilot.vim',
-
     -- The following plugin is my current theme
     'catppuccin/nvim',
 
