@@ -10,7 +10,7 @@ local lsps = {
     {require('lspconfig').pyright, 'pyright'},
     {require('lspconfig').terraformls, 'terraformls'},
     {require('lspconfig').tflint, 'tflint'},
-    {require('lspconfig').tsserver, 'tsserver'}
+    {require('lspconfig').ts_ls, 'ts_ls'}
     -- LuaFormatter on
 }
 local lspToConfigure = {}

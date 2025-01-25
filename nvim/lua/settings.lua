@@ -24,9 +24,6 @@ vim.opt.smartindent = true
 vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
 
--- Enable Copilot for markdown
-vim.g.copilot_filetypes = {markdown = true}
-
 -- Set vimwiki settings
 vim.g.vimwiki_global_ext = 0
 vim.g.vimwiki_list = {
