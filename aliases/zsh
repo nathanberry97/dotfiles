@@ -37,5 +37,10 @@ export NVM_DIR="${HOME}/.nvm"
 # tmux fzf sessioniser keybinding
 bindkey -s ^f "tmux-sessioniser\n"
 
+# get ip
+ipget() {
+  ifconfig | awk '/inet / && $2 != "127.0.0.1" {print $2}'
+}
+
 # command prompt theme
 eval "$(starship init zsh)"
