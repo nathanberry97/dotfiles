@@ -6,7 +6,7 @@ installHomebrew(){
 
 installPackages(){
     packageList=(
-        alacritty
+        ghostty
         neovim
         rectangle
         ripgrep
@@ -22,8 +22,8 @@ installPackages(){
 }
 
 purgeOldDotfiles(){
-    rm -rf ~/.config/alacritty.yml
     rm -rf ~/.config/aliases/aliases
+    rm -rf ~/.config/ghostty/config
     rm -rf ~/.config/nvim/init.vim
     rm -rf ~/.config/nvim/lua
     rm -rf ~/.config/starship.toml
@@ -32,19 +32,20 @@ purgeOldDotfiles(){
 }
 
 createDirs(){
-    mkdir -p ~/.config/tmux
-    mkdir -p ~/.config/nvim
     mkdir -p ~/.config/aliases
+    mkdir -p ~/.config/ghostty
+    mkdir -p ~/.config/nvim
+    mkdir -p ~/.config/tmux
     mkdir -p ~/.local/bin
 }
 
 setDotfiles(){
     cp -r ./nvim/ ~/.config/nvim/
-    cp ./alacritty/mac.yml ~/.config/alacritty.yml
-    cp ./starship/starship.toml ~/.config/starship.toml
-    cp ./tmux/tmux.conf ~/.config/tmux/tmux.conf
     cp ./aliases/zsh ~/.config/aliases/aliases
+    cp ./ghostty/config ~/.config/ghostty/config
+    cp ./starship/starship.toml ~/.config/starship.toml
     cp ./tmux/tmux-sessioniser ~/.local/bin/tmux-sessioniser
+    cp ./tmux/tmux.conf ~/.config/tmux/tmux.conf
 }
 
 while getopts "b?i?d?" opt; do
