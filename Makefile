@@ -11,32 +11,14 @@ git: ## Setup git
 	@chmod +x ./scripts/setup.sh
 	@./scripts/setup.sh -g
 
-.PHONY: installLinux
-installLinux: ## [Linux] Install dependencies
+.PHONY: install
+installLinux: ## [Fedora] Install dependencies
 	@echo "Installing all dependencies"
 	@chmod +x ./scripts/setupLinux.sh
 	@./scripts/setupLinux.sh -i
 
-.PHONY: dotfilesLinux
-dotfilesLinux: ## [Linux] Set dotfiles
+.PHONY: dotfiles
+dotfilesLinux: ## [Fedora] Set dotfiles
 	@echo "Setting dotfiles"
 	@chmod +x ./scripts/setupLinux.sh
 	@./scripts/setupLinux.sh -d
-
-.PHONY: brew
-brewMac: ## [macOS] Install brew
-	@echo "Installing brew"
-	@chmod +x ./scripts/setupMac.sh
-	@./scripts/setupMac.sh -b
-
-.PHONY: installMac
-installMac: ## [macOS] Install dependencies
-	@echo "Installing all dependencies"
-	@chmod +x ./scripts/setupMac.sh
-	@./scripts/setupMac.sh -i
-
-.PHONY: dotfilesMac
-dotfilesMac: ## [macOS] Set dotfiles
-	@echo "Setting dotfiles"
-	@chmod +x ./scripts/setupMac.sh
-	@./scripts/setupMac.sh -d
