@@ -56,7 +56,7 @@ setDotfiles(){
     chmod +x ./tmux/tmux-sessioniser
 
     cp -r ./nvim/ ~/.config/
-    cp ./alacritty/linux.toml ~/.config/alacritty/alacritty.toml
+    cp ./alacritty/alacritty.toml ~/.config/alacritty/alacritty.toml
     cp ./aliases/bash ~/.config/aliases/aliases
     cp ./i3/background.png ~/.config/i3/background.png
     cp ./i3/config ~/.config/i3/config
