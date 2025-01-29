@@ -12,21 +12,9 @@ To install the configurations please run the following commands:
 
 ```shell
 Usage:
-  git                   Setup git
-  installLinux          [Linux] Install dependencies
-  dotfilesLinux         [Linux] Set dotfiles
-  brewMac               [macOS] Install brew
-  installMac            [macOS] Install dependencies
-  dotfilesMac           [macOS] Set dotfiles
-```
-
-## Zshrc
-
-To use the custom Aliases file please add the following into you `.zshrc` file:
-
-```shell
-# Add to .zshrc
-source $HOME/.config/aliases/aliases
+  git              Setup git
+  install          [Fedora] Install dependencies
+  dotfiles         [Fedora] Set dotfiles
 ```
 
 ## Bashrc
