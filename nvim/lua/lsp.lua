@@ -66,3 +66,8 @@ for i = 1, #lspToConfigure do
         lspToConfigure[i].setup({capabilities = capabilities})
     end
 end
+
+-- Formate code on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function() vim.lsp.buf.format({async = false}) end
+})
