@@ -7,7 +7,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- LuaFormatter off
 local plugins = {
     -- The following plugins are for git integration
     'airblade/vim-gitgutter',
@@ -80,6 +79,5 @@ local plugins = {
     },
 
 }
--- LuaFormatter on
 
 require('lazy').setup(plugins, {})

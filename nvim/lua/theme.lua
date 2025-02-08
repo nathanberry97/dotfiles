@@ -5,7 +5,7 @@ vim.o.laststatus = 0
 require("catppuccin").setup({
     flavour = "frappe",
     custom_highlights = function(colors)
-        return {TabLineSel = {fg = colors.blue}}
+        return { TabLineSel = { fg = colors.blue } }
     end
 })
 vim.cmd.colorscheme "catppuccin"
@@ -17,14 +17,12 @@ vim.cmd('hi TabLineSel guibg=none ctermbg=none')
 vim.cmd('hi SignColumn guibg=none ctermbg=none')
 
 -- Disable GitGutter SignColumn colour
--- LuaFormatter off
 local gitGutter = {
     'GitGutterChange',
     'GitGutterAdd',
     'GitGutterDelete',
     'GitGutterChangeDelete'
 }
--- LuaFormatter on
 
 for i = 1, #gitGutter do
     vim.cmd(string.format('hi %s guibg=none guifg=none', gitGutter[i]))

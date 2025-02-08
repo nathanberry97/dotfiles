@@ -1,5 +1,4 @@
 require("nvim-treesitter.configs").setup({
-    -- LuaFormatter off
     ensure_installed = {
         "bash",
         "go",
@@ -9,7 +8,6 @@ require("nvim-treesitter.configs").setup({
         "typescript",
         "vimdoc",
     },
-    -- LuaFormatter on
-    highlight = {enable = true},
-    indent = {enable = true}
+    highlight = { enable = true },
+    indent = { enable = true }
 })
