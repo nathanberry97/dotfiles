@@ -18,5 +18,10 @@ vim.keymap.set('n', 'ga', ':Git add -A <CR>')
 vim.keymap.set('n', 'gc', ':Git commit <CR>')
 vim.keymap.set('n', 'gp', ':Git push <CR>')
 
+-- Vimwiki key mappings
+vim.keymap.set('n', '<enter>', '<Plug>VimwikiFollowLink')
+vim.keymap.set('n', '<Tab>', '<Plug>VimwikiNextLink')
+vim.keymap.set('n', '<S-Tab>', '<Plug>VimwikiPrevLink')
+
 -- Configure key mappings for LSP
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})

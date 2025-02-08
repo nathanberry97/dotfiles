@@ -23,14 +23,12 @@ local plugins = {
             -- Set Vimwiki settings
             vim.g.vimwiki_global_ext = 0
             vim.g.vimwiki_list = {
-                { path = '~/Documents/repos/wiki', syntax = 'markdown', ext = '.md' }
+                {
+                    path = '~/Documents/repos/wiki',
+                    syntax = 'markdown',
+                    ext = '.md'
+                }
             }
-        end,
-        config = function()
-            -- Set custom key mappings
-            vim.keymap.set('n', '<enter>', '<Plug>VimwikiFollowLink')
-            vim.keymap.set('n', '<Tab>', '<Plug>VimwikiNextLink')
-            vim.keymap.set('n', '<S-Tab>', '<Plug>VimwikiPrevLink')
         end
     },
 
