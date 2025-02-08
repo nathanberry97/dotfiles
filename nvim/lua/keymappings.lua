@@ -20,9 +20,3 @@ vim.keymap.set('n', 'gp', ':Git push <CR>')
 
 -- Configure key mappings for LSP
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
-
--- Disable vimwiki keymappings and enable a select few
-vim.g.vimwiki_key_mappings = {all_maps = 0}
-vim.keymap.set('n', '<enter>', '<Plug>VimwikiFollowLink')
-vim.keymap.set('n', '<Tab>', '<Plug>VimwikiNextLink')
-vim.keymap.set('n', '<S-Tab>', '<Plug>VimwikiPrevLink')

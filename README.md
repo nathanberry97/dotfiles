@@ -1,6 +1,7 @@
 # dotfiles
 
-> This repo is intended to store my configurations for things such as tmux and neovim
+> This repo is intended to store my configurations for things such as tmux and
+> neovim
 
 ## preview
 
@@ -8,9 +9,11 @@
 
 ## Installation
 
-To install the configurations please run the following commands:
+To install the configurations please run the following commands with `make`:
 
 ```shell
+dotfiles
+
 Usage:
   git                Setup git
   brew               [macOS] Install brew

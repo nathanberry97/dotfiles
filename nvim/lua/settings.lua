@@ -26,9 +26,3 @@ vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
 vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
-
--- Set vimwiki settings
-vim.g.vimwiki_global_ext = 0
-vim.g.vimwiki_list = {
-    {path = '~/Documents/repos/wiki', syntax = 'markdown', ext = '.md'}
-}
