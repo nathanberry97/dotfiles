@@ -12,6 +12,15 @@ local plugins = {
     'airblade/vim-gitgutter',
     'tpope/vim-fugitive',
 
+    -- The following plugin is my current theme
+    'catppuccin/nvim',
+
+    -- The following plugin is for managing tabs
+    'nathanberry97/dumbtab.nvim',
+
+    -- The following plugin is to allow smart pane switching with tmux
+    'christoomey/vim-tmux-navigator',
+
     -- The following plugin is for note taking
     {
         'vimwiki/vimwiki',
@@ -30,15 +39,6 @@ local plugins = {
             }
         end
     },
-
-    -- The following plugin is my current theme
-    'catppuccin/nvim',
-
-    -- The following plugin is for managing tabs
-    'nathanberry97/dumbtab.nvim',
-
-    -- The following plugin is to allow smart pane switching with tmux
-    'christoomey/vim-tmux-navigator',
 
     -- The following plugins are for fuzz finding
     {

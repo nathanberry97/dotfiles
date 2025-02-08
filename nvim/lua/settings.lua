@@ -14,8 +14,6 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = 'yes'
 vim.opt.wrap = false
-
--- Copy to clipboard
 vim.opt.shortmess:append('I')
 vim.opt.shortmess:append('c')
 vim.opt.clipboard:append("unnamedplus")
