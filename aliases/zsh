@@ -17,10 +17,6 @@ alias gd="git diff"
 export PATH=$PATH:${HOME}/.local/bin
 export PATH=$PATH:${HOME}/go/bin
 
-# Playdate vars
-export PLAYDATE_SDK_PATH=${HOME}/Developer/PlaydateSDK
-export PATH=$PATH:${PLAYDATE_SDK_PATH}/bin
-
 # fzf Catppuccino theme
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
