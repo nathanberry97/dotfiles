@@ -14,79 +14,68 @@ TERM = "xterm-256color"
 size   = 26
 normal = { family = "JetBrains Mono", style = "Regular" }
 
-# Theme catppuccin
 [colors.primary]
-background        = "#303446"
-foreground        = "#C6D0F5"
-dim_foreground    = "#C6D0F5"
-bright_foreground = "#C6D0F5"
+background        = "#24273a"
+foreground        = "#cad3f5"
+dim_foreground    = "#8087a2"
+bright_foreground = "#cad3f5"
 
 [colors.cursor]
-text   = "#303446"
-cursor = "#F2D5CF"
+text   = "#24273a"
+cursor = "#f4dbd6"
 
 [colors.vi_mode_cursor]
-text   = "#303446"
-cursor = "#BABBF1"
+text   = "#24273a"
+cursor = "#b7bdf8"
 
 [colors.search.matches]
-foreground = "#303446"
-background = "#A5ADCE"
+foreground = "#24273a"
+background = "#a5adcb"
 
 [colors.search.focused_match]
-foreground = "#303446"
-background = "#A6D189"
+foreground = "#24273a"
+background = "#a6da95"
 
 [colors.footer_bar]
-foreground = "#303446"
-background = "#A5ADCE"
+foreground = "#24273a"
+background = "#a5adcb"
 
 [colors.hints.start]
-foreground = "#303446"
-background = "#E5C890"
+foreground = "#24273a"
+background = "#eed49f"
 
 [colors.hints.end]
-foreground = "#303446"
-background = "#A5ADCE"
+foreground = "#24273a"
+background = "#a5adcb"
 
 [colors.selection]
-text       = "#303446"
-background = "#F2D5CF"
+text = "#24273a"
+background = "#f4dbd6"
 
 [colors.normal]
-black   = "#51576D"
-red     = "#E78284"
-green   = "#A6D189"
-yellow  = "#E5C890"
-blue    = "#8CAAEE"
-magenta = "#F4B8E4"
-cyan    = "#81C8BE"
-white   = "#B5BFE2"
+black   = "#494d64"
+red     = "#ed8796"
+green   = "#a6da95"
+yellow  = "#eed49f"
+blue    = "#8aadf4"
+magenta = "#f5bde6"
+cyan    = "#8bd5ca"
+white   = "#b8c0e0"
 
 [colors.bright]
-black   = "#626880"
-red     = "#E78284"
-green   = "#A6D189"
-yellow  = "#E5C890"
-blue    = "#8CAAEE"
-magenta = "#F4B8E4"
-cyan    = "#81C8BE"
-white   = "#A5ADCE"
-
-[colors.dim]
-black   = "#51576D"
-red     = "#E78284"
-green   = "#A6D189"
-yellow  = "#E5C890"
-blue    = "#8CAAEE"
-magenta = "#F4B8E4"
-cyan    = "#81C8BE"
-white   = "#B5BFE2"
+black   = "#5b6078"
+red     = "#ed8796"
+green   = "#a6da95"
+yellow  = "#eed49f"
+blue    = "#8aadf4"
+magenta = "#f5bde6"
+cyan    = "#8bd5ca"
+white   = "#a5adcb"
 
 [[colors.indexed_colors]]
 index = 16
-color = "#EF9F76"
+color = "#f5a97f"
 
 [[colors.indexed_colors]]
 index = 17
-color = "#F2D5CF"
+color = "#f4dbd6"

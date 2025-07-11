@@ -15,6 +15,7 @@ vim.opt.wrap = false
 vim.opt.shortmess:append('I')
 vim.opt.shortmess:append('c')
 vim.opt.clipboard:append('unnamedplus')
+vim.g.netrw_banner = 0
 
 -- Enable signcolumn and disable column colours
 vim.opt.signcolumn = 'yes'
@@ -37,3 +38,4 @@ vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>s', function() vim.o.spell = not vim.o.spell end)
 vim.keymap.set('n', '<leader>r', [[:%s/<C-r><C-w>//g<Left><Left>]])
 vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessioniser<CR>')
+vim.keymap.set('n', '-', ':Ex<CR>')

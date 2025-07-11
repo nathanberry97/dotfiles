@@ -7,12 +7,6 @@ return {
         end
     },
     {
-        'nathanberry97/dumbtree.nvim',
-        config = function()
-            require('dumbtree').setup()
-        end
-    },
-    {
         'tpope/vim-fugitive',
         config = function()
             -- Git key mappings vim-fugitive
