@@ -2,7 +2,7 @@ return {
     'catppuccin/nvim',
     config = function()
         require('catppuccin').setup({
-            flavour = 'macchiato',
+            flavour = 'mocha',
             custom_highlights = function(colors)
                 return { TabLineSel = { fg = colors.pink } }
             end
