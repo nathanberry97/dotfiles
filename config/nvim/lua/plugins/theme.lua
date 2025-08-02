@@ -4,7 +4,7 @@ return {
         require('catppuccin').setup({
             flavour = 'mocha',
             custom_highlights = function(colors)
-                return { TabLineSel = { fg = colors.pink } }
+                return { TabLineSel = { fg = colors.blue } }
             end
         })
         vim.cmd.colorscheme 'catppuccin'
