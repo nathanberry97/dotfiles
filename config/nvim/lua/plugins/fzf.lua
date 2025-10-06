@@ -3,7 +3,8 @@ return {
     dependencies = {
         'junegunn/fzf',
         dir = '~/.local/share/nvim/lazy/fzf',
-        build = './install --all'
+        build = './install --all',
+        version = '0.65.2'
     },
     config = function()
         -- fzf key mappings

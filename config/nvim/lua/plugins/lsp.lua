@@ -1,8 +1,15 @@
 return {
     'neovim/nvim-lspconfig',
+    version = 'v2.5.0',
     dependencies = {
-        'williamboman/mason.nvim',
-        'williamboman/mason-lspconfig.nvim'
+        {
+            'williamboman/mason.nvim',
+            version = 'v2.1.0'
+        },
+        {
+            'williamboman/mason-lspconfig.nvim',
+            version = 'v2.1.0'
+        }
     },
     config = function()
         -- Define LSPs to install and configure

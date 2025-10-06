@@ -1,6 +1,7 @@
 return {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
+    tag = 'v0.10.0',
     config = function()
         require('nvim-treesitter.configs').setup({
             ensure_installed = {

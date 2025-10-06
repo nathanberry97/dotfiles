@@ -1,5 +1,6 @@
 return {
     'vimwiki/vimwiki',
+    version = 'v2024.01.24',
     init = function()
         -- Disable default key mappings
         vim.g.vimwiki_key_mappings = { all_maps = 0 }
