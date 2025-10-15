@@ -1,10 +1,10 @@
 {
     "03989f15-68eb-4bf5-8a8b-bd2a899bc801": {
         "id": "03989f15-68eb-4bf5-8a8b-bd2a899bc801",
-        "name": "Google Search",
-        "keyword": "g",
-        "cmd": "https://google.com/search?q=%s",
-        "icon": "/usr/share/ulauncher/media/google-search-icon.png",
+        "name": "search",
+        "keyword": "s",
+        "cmd": "https://duckduckgo.com/search?q=%s",
+        "icon": "~/.config/ulauncher/search.png",
         "is_default_search": true,
         "run_without_argument": false,
         "added": 1753818315.9692967
