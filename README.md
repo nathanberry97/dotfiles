@@ -5,7 +5,7 @@
 
 ## preview
 
-![image](.images/neovim.png)
+![image](.assets/preview.webp)
 
 ## Zshrc
 
