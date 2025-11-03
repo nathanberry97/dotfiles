@@ -37,6 +37,7 @@ installPackages() {
         ripgrep
         starship
         tmux
+        node
     )
 
     log "Installing packages via Homebrew..."
@@ -69,12 +70,12 @@ createDirs() {
 # =========[ Copy Dotfiles ]=========
 setDotfiles() {
     log "Copying new dotfiles..."
-    cp -r ./nvim/ ~/.config/nvim/
-    cp ./aliases/zsh ~/.config/aliases/aliases
-    cp ./ghostty/config ~/.config/ghostty/config
-    cp ./starship/starship.toml ~/.config/starship.toml
-    cp ./tmux/tmux-sessioniser ~/.local/bin/tmux-sessioniser
-    cp ./tmux/tmux.conf ~/.config/tmux/tmux.conf
+    cp -r ./config/nvim/ ~/.config/nvim/
+    cp ./config/aliases/zsh ~/.config/aliases/aliases
+    cp ./config/ghostty/config ~/.config/ghostty/config
+    cp ./config/starship/starship.toml ~/.config/starship.toml
+    cp ./config/tmux/tmux-sessioniser ~/.local/bin/tmux-sessioniser
+    cp ./config/tmux/tmux.conf ~/.config/tmux/tmux.conf
     chmod +x ~/.local/bin/tmux-sessioniser
     log "Dotfiles set successfully."
 }

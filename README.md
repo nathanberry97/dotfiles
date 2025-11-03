@@ -7,15 +7,6 @@
 
 ![image](.assets/preview.webp)
 
-## Zshrc
-
-To use the custom Aliases file please add the following into you `.zshrc` file:
-
-```shell
-# Add to .zshrc
-source $HOME/.config/aliases/aliases
-```
-
 ## Bashrc
 
 To use the custom Aliases file please add the following into you `.bashrc` file:
@@ -40,3 +31,24 @@ Once updated return the permissions back to what they were previously set to:
 ```
 sudo chmod 600 /dev/hidraw*
 ```
+## Setting up macbook
+
+> Install brew and then restart terminal, also update fzf colour to match the
+> theme set in ghostty as it is set to fedora setup
+
+```
+./scripts/macSetup.sh -b # brew install
+./scripts/macSetup.sh -d # dotfile setup
+./scripts/macSetup.sh -i # package install
+./scripts/macSetup.sh -g # git setup
+```
+
+### Zshrc
+
+To use the custom Aliases file please add the following into you `.zshrc` file:
+
+```shell
+# Add to .zshrc
+source $HOME/.config/aliases/aliases
+```
+
