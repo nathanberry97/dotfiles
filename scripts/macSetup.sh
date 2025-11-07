@@ -30,14 +30,21 @@ installHomebrew() {
 
 # =========[ Install Packages ]=========
 installPackages() {
+    brew tap hashicorp/tap
+
     local packageList=(
+        alphagov/gds/gds-cli
+        aws-vault
         ghostty
+        hashicorp/tap/terraform
         neovim
+        node
+        pyenv
         rectangle
         ripgrep
         starship
+        terragrunt
         tmux
-        node
     )
 
     log "Installing packages via Homebrew..."
@@ -46,6 +53,16 @@ installPackages() {
     done
     brew cleanup
     log "Package installation complete."
+
+    # NVM install
+    # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+    # AWS CLI install
+    # curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+    # sudo installer -pkg ./AWSCLIV2.pkg -target /
+
+    # yubikey-manager install
+    # pip3 install --user yubikey-manager
 }
 
 # =========[ Purge Old Dotfiles ]=========
@@ -97,14 +114,13 @@ usage() {
     echo "  -i   Install packages"
     echo "  -d   Set up dotfiles (purge + copy)"
     echo "  -g   Configure Git"
-    echo "  -a   Run all setup steps"
     exit 1
 }
 
 # =========[ Parse Options ]=========
 if [ $# -eq 0 ]; then usage; fi
 
-while getopts "bidga" opt; do
+while getopts "bidg" opt; do
     case $opt in
         b)
             installHomebrew
@@ -120,14 +136,6 @@ while getopts "bidga" opt; do
         g)
             setupGit
             ;;
-        a)
-            installHomebrew
-            installPackages
-            createDirs
-            purgeOldDotfiles
-            setDotfiles
-            setupGit
-            ;;
         *)
             usage
             ;;
@@ -135,4 +143,3 @@ while getopts "bidga" opt; do
 done
 
 log "Setup complete"
-
