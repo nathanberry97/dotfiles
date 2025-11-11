@@ -52,6 +52,10 @@ installPackages() {
         brew install "$package" || warn "Package $package failed or already installed."
     done
     brew cleanup
+
+    # Install nx monorepo
+    npm add --global nx
+
     log "Package installation complete."
 
     # NVM install
