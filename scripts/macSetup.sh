@@ -39,6 +39,7 @@ installPackages() {
         hashicorp/tap/terraform
         neovim
         node
+        pre-commit
         pyenv
         rectangle
         ripgrep
@@ -53,8 +54,9 @@ installPackages() {
     done
     brew cleanup
 
-    # Install nx monorepo
+    # Install nx monorepo & pnpm
     npm add --global nx
+    npm add --global pnpm
 
     log "Package installation complete."
 
