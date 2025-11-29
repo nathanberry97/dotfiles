@@ -1,13 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# mac-setup.sh — Personal macOS setup script
-# Author: Nathan Berry
-# Description: Installs packages, sets up dotfiles, and configures Git.
+set -e
+set -u
 
-set -e  # Exit on error
-set -u  # Exit on undefined variable
-
-# =========[ Colors for logs ]=========
+# =========[ Colours & logging ]=========
 GREEN="\033[0;32m"
 YELLOW="\033[1;33m"
 RED="\033[0;31m"
@@ -28,14 +24,18 @@ installHomebrew() {
     fi
 }
 
-# =========[ Install Packages ]=========
+# =========[ Install Brew Packages ]=========
 installPackages() {
-    brew tap hashicorp/tap
+    log "Installing brew packages..."
 
-    local packageList=(
+    brew tap hashicorp/tap
+    brew tap alphagov/gds
+
+    packageList=(
         alphagov/gds/gds-cli
         aws-vault
         ghostty
+        go
         hashicorp/tap/terraform
         neovim
         node
@@ -48,46 +48,81 @@ installPackages() {
         tmux
     )
 
-    log "Installing packages via Homebrew..."
     for package in "${packageList[@]}"; do
-        brew install "$package" || warn "Package $package failed or already installed."
+        if brew list "$package" &>/dev/null; then
+            log "$package is already installed."
+        else
+            brew install "$package" || warn "Failed: $package"
+        fi
     done
+
     brew cleanup
 
-    # Install nx monorepo & pnpm
-    npm add --global nx
-    npm add --global pnpm
+    log "brew packages done."
 
-    log "Package installation complete."
+    # Global npm tools
+    if npm list -g --depth=0 | grep -q "nx"; then
+        warn "nx already installed."
+    else
+        npm add --global nx
+        log "nx installed."
+    fi
 
-    # NVM install
-    # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+    if npm list -g --depth=0 | grep -q "pnpm"; then
+        warn "pnpm already installed."
+    else
+        npm add --global pnpm
+        log "pnpm installed."
+    fi
+}
 
-    # AWS CLI install
-    # curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
-    # sudo installer -pkg ./AWSCLIV2.pkg -target /
+# =========[ Install NVM ]=========
+installNvm() {
+    log "Installing NVM..."
+    if [ -d "$HOME/.nvm" ]; then
+        warn "NVM already installed, skipping."
+    else
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+        log "NVM installed."
+    fi
+}
 
-    # yubikey-manager install
-    # pip3 install --user yubikey-manager
+# =========[ Install AWS CLI ]=========
+installAwsCli() {
+    log "Installing AWS CLI..."
+    if command -v aws &>/dev/null; then
+        warn "AWS CLI already installed, skipping."
+    else
+        curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
+        sudo installer -pkg ./AWSCLIV2.pkg -target /
+        rm "AWSCLIV2.pkg"
+        log "AWS CLI installed."
+    fi
+}
+
+# =========[ Create Dotfile Directories ]=========
+createDirs() {
+    log "Creating dotfile dirs..."
+    mkdir -p ~/.config/{aliases,ghostty,nvim,tmux}
+    mkdir -p ~/.local/bin
 }
 
 # =========[ Purge Old Dotfiles ]=========
 purgeOldDotfiles() {
-    log "Removing old dotfiles..."
-    rm -rf ~/.config/aliases/aliases
-    rm -rf ~/.config/ghostty/config
-    rm -rf ~/.config/nvim/init.vim
-    rm -rf ~/.config/nvim/lua
-    rm -rf ~/.config/starship.toml
-    rm -rf ~/.config/tmux/tmux.conf
-    rm -rf ~/.local/bin/tmux-sessioniser
-}
+    log "Purging old dotfiles..."
+    dotfilesToRemove=(
+        ~/.config/aliases/aliases
+        ~/.config/ghostty/config
+        ~/.config/nvim/init.vim
+        ~/.config/nvim/lua
+        ~/.config/starship.toml
+        ~/.config/tmux/tmux.conf
+        ~/.local/bin/tmux-sessioniser
+    )
 
-# =========[ Create Directories ]=========
-createDirs() {
-    log "Creating configuration directories..."
-    mkdir -p ~/.config/{aliases,ghostty,nvim,tmux}
-    mkdir -p ~/.local/bin
+    for file in "${dotfilesToRemove[@]}"; do
+        rm -rf "$file"
+    done
 }
 
 # =========[ Copy Dotfiles ]=========
@@ -97,55 +132,64 @@ setDotfiles() {
     cp ./config/aliases/zsh ~/.config/aliases/aliases
     cp ./config/ghostty/config ~/.config/ghostty/config
     cp ./config/starship/starship.toml ~/.config/starship.toml
-    cp ./config/tmux/tmux-sessioniser ~/.local/bin/tmux-sessioniser
     cp ./config/tmux/tmux.conf ~/.config/tmux/tmux.conf
-    chmod +x ~/.local/bin/tmux-sessioniser
     log "Dotfiles set successfully."
 }
 
-# =========[ Git Setup ]=========
-setupGit() {
-    read -rp "Enter your Git email: " email
-    read -rp "Enter your Git username: " username
-    git config --global user.name "$username"
-    git config --global user.email "$email"
-    git config --global core.editor "nvim"
-    log "Git configured for $username <$email>."
+# =========[ Copy Scripts ]=========
+setScripts() {
+    log "Copying scripts..."
+    cp ./config/tmux/tmux-sessioniser ~/.local/bin/tmux-sessioniser
+    chmod +x ~/.local/bin/tmux-sessioniser
 }
 
-# =========[ Main Execution Options ]=========
-usage() {
-    echo "Usage: $0 [-b] [-i] [-d] [-g] [-a]"
-    echo "  -b   Install Homebrew"
-    echo "  -i   Install packages"
-    echo "  -d   Set up dotfiles (purge + copy)"
-    echo "  -g   Configure Git"
-    exit 1
+# =========[ Copy Extra Scripts ]=========
+setScripts() {
+    log "Copying scripts..."
+    cp ./dotfiles/config/tmux/tmux-sessioniser ~/.local/bin/tmux-sessioniser
+    chmod +x ~/.local/bin/tmux-sessioniser
 }
 
-# =========[ Parse Options ]=========
-if [ $# -eq 0 ]; then usage; fi
+# =========[ Configure Git ]=========
+configureGit() {
+    log "Configuring Git..."
+    if git config --global user.name &>/dev/null && git config --global user.email &>/dev/null; then
+        warn "Git already configured, skipping."
+    else
+        read -rp "Enter your git email: " email
+        read -rp "Enter your git name: " username
+        git config --global user.name "$username"
+        git config --global user.email "$email"
+        git config --global core.editor "nvim"
+        git config --global commit.gpgsign true
+        git config --global gpg.format ssh
+        log "Git configured."
+    fi
+}
 
-while getopts "bidg" opt; do
-    case $opt in
-        b)
-            installHomebrew
-            ;;
-        i)
-            installPackages
-            ;;
-        d)
-            createDirs
-            purgeOldDotfiles
-            setDotfiles
-            ;;
-        g)
-            setupGit
-            ;;
-        *)
-            usage
-            ;;
-    esac
-done
+# =========[ Main Execution ]=========
 
-log "Setup complete"
+clear
+cat << "EOF"
+========================================
+     mcberry - macOS Crafting Tool
+         by: nathan berry
+========================================
+EOF
+
+echo "Requesting sudo privileges..."
+sudo -v
+
+log "Starting setup..."
+
+installHomebrew
+installPackages
+installNvm
+installAwsCli
+createDirs
+purgeOldDotfiles
+setDotfiles
+setScripts
+configureGit
+
+log "Setup complete!"

@@ -6,7 +6,7 @@ alias ls="ls -l"
 
 alias gb="git checkout -b"
 alias ga="git add -A"
-alias gc="git commit -m"
+alias gc="git commit"
 alias gp="git push"
 alias gpn="git push --set-upstream origin"
 alias gP="git pull"

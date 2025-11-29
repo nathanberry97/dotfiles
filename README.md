@@ -37,10 +37,7 @@ sudo chmod 600 /dev/hidraw*
 > theme set in ghostty as it is set to fedora setup
 
 ```
-./scripts/macSetup.sh -b # brew install
-./scripts/macSetup.sh -d # dotfile setup
-./scripts/macSetup.sh -i # package install
-./scripts/macSetup.sh -g # git setup
+./scripts/macSetup.sh
 ```
 
 ### Zshrc
