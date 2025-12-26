@@ -17,9 +17,8 @@ vim.opt.shortmess:append('c')
 vim.opt.clipboard:append('unnamedplus')
 vim.g.netrw_banner = 0
 
--- Enable signcolumn and disable column colours
+-- Enable signcolumn
 vim.opt.signcolumn = 'yes'
-vim.cmd('hi SignColumn guibg=none ctermbg=none')
 
 -- Tab settings
 vim.opt.expandtab = true

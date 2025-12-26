@@ -1,3 +1,6 @@
+-- Disable column colours
+vim.cmd('hi SignColumn guibg=none ctermbg=none')
+
 -- Remove default colours for git gutter
 local gitGutter = {
     'GitGutterChange',
