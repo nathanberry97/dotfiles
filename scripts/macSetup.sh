@@ -34,6 +34,8 @@ installPackages() {
     packageList=(
         alphagov/gds/gds-cli
         aws-vault
+        detect-secrets
+        gemini
         ghostty
         go
         hashicorp/tap/terraform
@@ -43,6 +45,7 @@ installPackages() {
         pyenv
         rectangle
         ripgrep
+        semgrep
         starship
         terragrunt
         tmux
@@ -143,13 +146,6 @@ setScripts() {
     chmod +x ~/.local/bin/tmux-sessioniser
 }
 
-# =========[ Copy Extra Scripts ]=========
-setScripts() {
-    log "Copying scripts..."
-    cp ./dotfiles/config/tmux/tmux-sessioniser ~/.local/bin/tmux-sessioniser
-    chmod +x ~/.local/bin/tmux-sessioniser
-}
-
 # =========[ Configure Git ]=========
 configureGit() {
     log "Configuring Git..."
@@ -171,10 +167,9 @@ configureGit() {
 
 clear
 cat << "EOF"
-========================================
-     mcberry - macOS Crafting Tool
-         by: nathan berry
-========================================
+=============================
+     macOS Crafting Tool
+=============================
 EOF
 
 echo "Requesting sudo privileges..."
