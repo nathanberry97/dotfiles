@@ -5,11 +5,10 @@ alias vim="nvim"
 alias gh="history | grep"
 alias ls="ls -l"
 alias ..="cd .."
-alias neofetch="fastfetch"
 
 alias gb="git checkout -b"
 alias ga="git add -A"
-alias gc="git commit -m"
+alias gc="git commit"
 alias gp="git push"
 alias gpn="git push --set-upstream origin"
 alias gP="git pull"
@@ -20,7 +19,13 @@ alias gd="git diff"
 export PATH=$PATH:${HOME}/.local/bin
 export PATH=$PATH:${HOME}/go/bin
 
-export FZF_DEFAULT_OPTS=""
+# fzf Catppuccino theme
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#181825,spinner:#F5E0DC,hl:#F38BA8 \
+--color=fg:#CDD6F4,header:#F38BA8,info:#CBA6F7,pointer:#F5E0DC \
+--color=marker:#B4BEFE,fg+:#CDD6F4,prompt:#CBA6F7,hl+:#F38BA8 \
+--color=selected-bg:#45475A \
+--color=border:#313244,label:#CDD6F4"
 
 # tmux fzf sessioniser keybinding
 bind -x '"\C-f": tmux-sessioniser'

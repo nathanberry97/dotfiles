@@ -1,0 +1,7 @@
+configuration{
+    show-icons: false;
+    terminal: "alacritty";
+    drun-display-format: "{name}";
+}
+
+@theme "spotlight"

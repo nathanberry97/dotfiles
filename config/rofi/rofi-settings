@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+divider="---------"
+exit_item="Exit"
+SCRIPT_DIR="$HOME/.config/rofi/utils"
+rofi_command="rofi -dmenu -i -matching fuzzy -p"
+
+
+safe_exit() { exit 0; }
+
+# Submenus
+bluetooth_menu() { "$SCRIPT_DIR/rofi-blu"; }
+audio_menu()     { "$SCRIPT_DIR/rofi-audio"; }
+network_menu()   { "$SCRIPT_DIR/rofi-nmtui"; }
+power_menu()     { "$SCRIPT_DIR/rofi-power"; }
+
+# Main menu loop
+while true; do
+    main_options="Bluetooth
+Network
+Audio
+Power
+$divider
+$exit_item"
+
+    choice=$(echo -e "$main_options" | $rofi_command "Settings")
+
+    # If Escape pressed or empty choice -> exit program
+    [[ -z "$choice" || "$choice" == "$exit_item" ]] && safe_exit
+    [[ "$choice" == "$divider" ]] && continue
+
+    case "$choice" in
+        Bluetooth) bluetooth_menu ;;
+        Network)   network_menu ;;
+        Audio)     audio_menu ;;
+        Power)     power_menu ;;
+    esac
+done
