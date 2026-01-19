@@ -3,10 +3,6 @@
 > This repo is intended to store my configurations for things such as i3, tmux
 > and neovim
 
-## preview
-
-![image](.assets/preview.webp)
-
 ## Installing packages
 
 To install packages needed for my personal i3 setup for fedora run the
