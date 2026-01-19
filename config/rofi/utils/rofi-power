@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+divider="---------"
+exit_item="Exit"
+rofi_command="rofi -dmenu -i -matching fuzzy -p Power"
+
+safe_exit() { exit 0; }
+
+while true; do
+    options="Shutdown
+Reboot
+Logout
+$divider
+$exit_item"
+
+    choice=$(echo -e "$options" | $rofi_command "Power")
+    case "$choice" in
+        Shutdown) systemctl poweroff ;;
+        Reboot) systemctl reboot ;;
+        Logout) i3-msg exit ;;
+        "$exit_item" | "") safe_exit ;;
+        "$divider") continue ;;
+    esac
+done

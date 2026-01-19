@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+divider="---------"
+exit_item="Exit"
+rofi_command="rofi -dmenu -i -matching fuzzy -p Network"
+
+safe_exit() { exit 0; }
+
+while true; do
+    options="Open Wi-Fi Menu
+Open Connections Menu
+$divider
+$exit_item"
+
+    choice=$(echo -e "$options" | $rofi_command "Network")
+    case "$choice" in
+        "Open Wi-Fi Menu") alacritty -e nmtui-connect ;;
+        "Open Connections Menu") alacritty -e nmtui ;;
+        "$exit_item" | "") safe_exit ;;
+        "$divider") continue ;;
+    esac
+done

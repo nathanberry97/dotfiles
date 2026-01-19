@@ -1,0 +1,177 @@
+#!/usr/bin/env bash
+
+divider="---------"
+exit_item="Exit"
+rofi_command="rofi -dmenu -i -matching fuzzy -p Audio"
+
+safe_exit() { exit 0; }
+
+get_default_sink() {
+    pactl info | awk -F': ' '/Default Sink/ {print $2}'
+}
+
+get_default_source() {
+    pactl info | awk -F': ' '/Default Source/ {print $2}'
+}
+
+get_volume() {
+    pactl get-sink-volume "$(get_default_sink)" \
+        | grep -o '[0-9]\+%' \
+        | tr -d '%' \
+        | sort -nr \
+        | head -n1
+}
+
+sink_muted() {
+    pactl get-sink-mute "$(get_default_sink)" | grep -q yes
+}
+
+toggle_sink_mute() {
+    pactl set-sink-mute "$(get_default_sink)" toggle
+}
+
+volume_up() {
+    pactl set-sink-volume "$(get_default_sink)" +10%
+}
+
+volume_down() {
+    pactl set-sink-volume "$(get_default_sink)" -10%
+}
+
+
+volume_bar() {
+    local vol filled empty
+    vol=$(pactl get-sink-volume "$(get_default_sink)" \
+        | grep -oP '\d+%' | tr -d '%' | sort -nr | head -n1)
+
+    # Cap at 100
+    ((vol>100)) && vol=100
+
+    # Calculate filled blocks
+    filled=$(( (vol + 5) / 10 ))
+    empty=$((10 - filled))
+
+    # Print filled blocks
+    if ((filled > 0)); then
+        printf "%0.s█" $(seq 1 "$filled")
+    fi
+
+    # Print empty blocks
+    if ((empty > 0)); then
+        printf "%0.s░" $(seq 1 "$empty")
+    fi
+}
+
+select_sink() {
+    mapfile -t sinks < <(
+        pactl list sinks |
+        awk '
+            /Name:/ {name=$2}
+            /Description:/ {
+                d=$0
+                sub(/^[ \t]*Description: /,"",d)
+                print d "|" name
+            }'
+    )
+
+    labels=()
+    for s in "${sinks[@]}"; do
+        labels+=("${s%%|*}")
+    done
+
+    choice=$(printf '%s\n' "${labels[@]}" "$divider" "$exit_item" | $rofi_command "Output")
+    [[ -z "$choice" || "$choice" == "$divider" ]] && return
+    [[ "$choice" == "$exit_item" ]] && safe_exit
+
+    for i in "${!labels[@]}"; do
+        [[ "${labels[$i]}" == "$choice" ]] && selected_sink="${sinks[$i]#*|}"
+    done
+
+    pactl set-default-sink "$selected_sink"
+
+    pactl list short sink-inputs | awk '{print $1}' | while read -r id; do
+        pactl move-sink-input "$id" "$selected_sink"
+    done
+}
+
+select_source() {
+    mapfile -t sources < <(
+        pactl list sources |
+        awk '
+            /Name:/ {name=$2}
+            /Description:/ {
+                d=$0
+                sub(/^[ \t]*Description: /,"",d)
+                print d "|" name
+            }'
+    )
+
+    labels=()
+    for s in "${sources[@]}"; do
+        labels+=("${s%%|*}")
+    done
+
+    choice=$(printf '%s\n' "${labels[@]}" "$divider" "$exit_item" | $rofi_command "Input")
+    [[ -z "$choice" || "$choice" == "$divider" ]] && return
+    [[ "$choice" == "$exit_item" ]] && safe_exit
+
+    for i in "${!labels[@]}"; do
+        [[ "${labels[$i]}" == "$choice" ]] && selected_source="${sources[$i]#*|}"
+    done
+
+    pactl set-default-source "$selected_source"
+}
+
+get_current_sink_name() {
+    pactl list sinks |
+    awk -v s="$(get_default_sink)" '
+        /Name:/ {n=$2}
+        /Description:/ {
+            d=$0
+            sub(/^[ \t]*Description: /,"",d)
+            if (n==s) print d
+        }'
+}
+
+get_current_source_name() {
+    pactl list sources |
+    awk -v s="$(get_default_source)" '
+        /Name:/ {n=$2}
+        /Description:/ {
+            d=$0
+            sub(/^[ \t]*Description: /,"",d)
+            if (n==s) print d
+        }'
+}
+
+while true; do
+    output_name=$(get_current_sink_name)
+    input_name=$(get_current_source_name)
+    volume_display=$(volume_bar)
+
+    mute_status="Mute: off"
+    sink_muted && mute_status="Mute: on"
+
+    options="Volume: $volume_display
+Volume +10%
+Volume -10%
+$mute_status
+$divider
+Output: $output_name
+Input:  $input_name
+$divider
+$exit_item"
+
+    choice=$(echo -e "$options" | $rofi_command "Audio")
+
+    case "$choice" in
+        "Volume +10%") volume_up ;;
+        "Volume -10%") volume_down ;;
+        "$mute_status") toggle_sink_mute ;;
+        "$exit_item" | "") safe_exit ;;
+        "Output:"*) select_sink ;;
+        "Input:"*) select_source ;;
+        "$divider") continue ;;
+        "Volume:"*) continue ;;
+    esac
+done
