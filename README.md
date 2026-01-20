@@ -1,40 +1,12 @@
-# dotfiles
+# dotfiles - works
 
 > This repo is intended to store my configurations for things such as tmux and
 > neovim
 
-## preview
-
-![image](.assets/preview.webp)
-
-## Bashrc
-
-To use the custom Aliases file please add the following into you `.bashrc` file:
-
-```shell
-# --- Add aliases to bashrc ---
-if [ -f ~/.config/aliases/aliases ]; then
-    . ~/.config/aliases/aliases
-fi
-```
-
-## Keyboard notes (mode 65)
-
-Commands to get via to work within Linux:
-
-```
-sudo chmod a+rw /dev/hidraw*
-```
-
-Once updated return the permissions back to what they were previously set to:
-
-```
-sudo chmod 600 /dev/hidraw*
-```
 ## Setting up macbook
 
-> Install brew and then restart terminal, also update fzf colour to match the
-> theme set in ghostty as it is set to fedora setup
+To install packages needed for my work setup for MacOS run the following
+command:
 
 ```
 ./scripts/macSetup.sh
@@ -48,4 +20,3 @@ To use the custom Aliases file please add the following into you `.zshrc` file:
 # Add to .zshrc
 source $HOME/.config/aliases/aliases
 ```
-

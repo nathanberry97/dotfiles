@@ -114,7 +114,7 @@ createDirs() {
 purgeOldDotfiles() {
     log "Purging old dotfiles..."
     dotfilesToRemove=(
-        ~/.config/aliases/aliases
+        ~/.config/aliases/index
         ~/.config/ghostty/config
         ~/.config/nvim/init.vim
         ~/.config/nvim/lua
@@ -132,7 +132,7 @@ purgeOldDotfiles() {
 setDotfiles() {
     log "Copying new dotfiles..."
     cp -r ./config/nvim/ ~/.config/nvim/
-    cp ./config/aliases/zsh ~/.config/aliases/aliases
+    cp ./config/aliases/index ~/.config/aliases/index
     cp ./config/ghostty/config ~/.config/ghostty/config
     cp ./config/starship/starship.toml ~/.config/starship.toml
     cp ./config/tmux/tmux.conf ~/.config/tmux/tmux.conf
