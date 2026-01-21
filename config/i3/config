@@ -34,6 +34,7 @@ bindsym $mod+q kill
 bindsym $mod+s exec --no-startup-id ~/.config/rofi/rofi-settings
 bindsym $mod+space exec "rofi -modi drun,run -show drun"
 bindsym --release $mod+l exec --no-startup-id slock
+bindsym $mod+p exec --no-startup-id scrot ~/Pictures/screenshot_%Y-%m-%d_%H-%M-%S.png
 
 # change focus
 bindsym $mod+Left focus left

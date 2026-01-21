@@ -60,6 +60,7 @@ installPackages() {
         polybar
         ripgrep
         rofi
+        scrot
         solaar
         sqlite
         terraform
