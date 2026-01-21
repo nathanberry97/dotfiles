@@ -39,3 +39,10 @@ on the eye, to do this follow the following:
 ```shell
 accessibility -> display -> reduce motion
 ```
+
+Lastly you need to disable the following else the workspaces will just change
+the order they are currently in:
+
+```shell
+desktop and dock -> automatically rearrange spaces based on most recent use
+```
