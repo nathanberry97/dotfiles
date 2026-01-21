@@ -1,4 +1,4 @@
-# dotfiles - works
+# dotfiles - work
 
 > This repo is intended to store my configurations for things such as tmux and
 > neovim
