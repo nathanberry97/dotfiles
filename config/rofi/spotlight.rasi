@@ -1,10 +1,9 @@
 * {
     font:   "monospace 12";
 
-    bg0:    #181825;
-
-    fg0:    #585b70;
-    fg1:    #cdd6f4;
+    bg0:    #222222AA;
+    fg0:    #7A7F8A;
+    fg1:    #FFFFFF;
 
     background-color:   transparent;
     text-color:         @fg0;

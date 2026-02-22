@@ -33,8 +33,11 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+q kill
 bindsym $mod+s exec --no-startup-id ~/.config/rofi/rofi-settings
 bindsym $mod+space exec "rofi -modi drun,run -show drun"
-bindsym --release $mod+l exec --no-startup-id slock
 bindsym $mod+p exec --no-startup-id scrot ~/Pictures/screenshot_%Y-%m-%d_%H-%M-%S.png
+
+# Set lock screen with slock
+bindsym --release $mod+l exec --no-startup-id slock
+exec --no-startup-id xautolock -time 5 -locker slock
 
 # change focus
 bindsym $mod+Left focus left
@@ -78,7 +81,7 @@ bindsym $mod+Shift+4 move container to workspace number $ws4
 
 # Custom settings
 exec --no-startup-id setxkbmap -option ctrl:nocaps
-exec_always --no-startup-id feh --bg-scale ~/.config/i3/background.png
+exec_always --no-startup-id feh --bg-scale ~/.config/i3/background.jpg
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id sh -c 'if xrandr | grep -q "^DP-[0-9]\+ connected"; then xrandr --output eDP-1 --off --output HDMI-1 --mode 1920x1080; else xrandr --output eDP-1 --scale 0.5 --filter nearest; fi'
 exec_always --no-startup-id ~/.config/polybar/launch.sh

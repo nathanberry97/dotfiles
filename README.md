@@ -41,8 +41,8 @@ Once install you can update the `config.def.h` file you can change the colours h
 ```shell
 static const char *colorname[NUMCOLS] = {
 	[INIT] =   "black",     /* after initialization */
-	[INPUT] =  "#1e1e2e",   /* during input */
-	[FAILED] = "#181825",   /* wrong password */
+	[INPUT] =  "#282828",   /* during input */
+	[FAILED] = "#1d2021",   /* wrong password */
 };
 ```
 
