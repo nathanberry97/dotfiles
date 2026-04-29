@@ -5,7 +5,6 @@ vim.opt.guicursor = ''
 vim.o.scrolloff = 8
 vim.o.splitbelow = true
 vim.o.splitright = true
-vim.opt.colorcolumn = '80'
 vim.opt.errorbells = false
 vim.opt.hlsearch = false
 vim.opt.incsearch = true

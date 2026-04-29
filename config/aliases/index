@@ -19,13 +19,8 @@ alias gd="git diff"
 export PATH=$PATH:${HOME}/.local/bin
 export PATH=$PATH:${HOME}/go/bin
 
-# fzf theme
-export FZF_DEFAULT_OPTS=" \
---color=bg+:#282828,bg:#1d2021,spinner:#d79921,hl:#fb4934 \
---color=fg:#ebdbb2,header:#b16286,info:#8ec07c,pointer:#d3869b \
---color=marker:#83a598,fg+:#ebdbb2,prompt:#83a598,hl+:#fb4934 \
---color=selected-bg:#3c3836 \
---color=border:#282828,label:#a89984"
+# fzf
+export FZF_DEFAULT_OPTS=""
 
 # tmux fzf sessioniser keybinding
 bind -x '"\C-f": tmux-sessioniser'

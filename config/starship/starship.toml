@@ -7,7 +7,7 @@ $character
 """
 
 [directory]
-style             = "bright-blue"
+style             = "bright-white"
 truncation_length = 1
 format            = '[$path]($style)'
 
